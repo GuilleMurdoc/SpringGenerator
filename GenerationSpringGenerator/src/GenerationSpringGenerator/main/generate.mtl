@@ -2,9 +2,13 @@
 [module generate('http://metamodelSpringGenerator')]
 
 
-[template public generateElement(anApp : App)]
+[template public generateElement(app : App)]
 [comment @main/]
-[file (anApp.name, false, 'UTF-8')]
 
-[/file]
+[for (dto : DTO | app.dtos)]
+	[file (app.name.concat('/').concat(dto.name.concat('.java')), false, 'UTF-8')]
+
+	[/file]
+[/for]
+
 [/template]
