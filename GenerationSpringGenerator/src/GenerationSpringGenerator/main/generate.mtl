@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('http://metamodelSpringGenerator')]
+
+
+[template public generateElement(anApp : App)]
+[comment @main/]
+[file (anApp.name, false, 'UTF-8')]
+
+[/file]
+[/template]
