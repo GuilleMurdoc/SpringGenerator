@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_fu-NMD7VEfCvDuOhuCRWWA" name="ProfileSpringGenerator">
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_fu-NMD7VEfCvDuOhuCRWWA" name="ProfileSpringGenerator" metaclassReference="_WwINcD7WEfCE1Jn6loJQ0A">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bTV58D7WEfCE1Jn6loJQ0A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_bTV58T7WEfCE1Jn6loJQ0A" name="ProfileSpringGenerator" nsURI="http:///schemas/ProfileSpringGenerator/_bTVS4D7WEfCE1Jn6loJQ0A/0" nsPrefix="ProfileSpringGenerator">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bTV59z7WEfCE1Jn6loJQ0A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bTV5-D7WEfCE1Jn6loJQ0A" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bTV5-T7WEfCE1Jn6loJQ0A" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bTV5-j7WEfCE1Jn6loJQ0A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bTV5-z7WEfCE1Jn6loJQ0A" key="Date" value="2025-06-01"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bTV5_D7WEfCE1Jn6loJQ0A" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_bTV58j7WEfCE1Jn6loJQ0A" name="DTO">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bTV58z7WEfCE1Jn6loJQ0A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ExmyYD7WEfCE1Jn6loJQ0A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_bTV59D7WEfCE1Jn6loJQ0A" name="base_Class" ordered="false">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_WwINcD7WEfCE1Jn6loJQ0A" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_f0JoID7VEfCvDuOhuCRWWA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_f0MrcD7VEfCvDuOhuCRWWA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
   </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_ExmyYD7WEfCE1Jn6loJQ0A" name="DTO">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Xq7BwT7WEfCE1Jn6loJQ0A" name="base_Class" association="_Xq4lgD7WEfCE1Jn6loJQ0A">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Xq7Bwj7WEfCE1Jn6loJQ0A"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_Xq4lgD7WEfCE1Jn6loJQ0A" name="E_DTO_Class5" memberEnd="_Xq7BwD7WEfCE1Jn6loJQ0A _Xq7BwT7WEfCE1Jn6loJQ0A">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Xq7BwD7WEfCE1Jn6loJQ0A" name="extension_DTO" type="_ExmyYD7WEfCE1Jn6loJQ0A" aggregation="composite" association="_Xq4lgD7WEfCE1Jn6loJQ0A"/>
+  </packagedElement>
 </uml:Profile>
