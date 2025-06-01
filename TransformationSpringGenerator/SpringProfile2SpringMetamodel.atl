@@ -4,3 +4,31 @@
 module SpringProfile2SpringMetamodel;
 create OUT : SpringMetamodel from IN : UML;
 
+rule model2app {
+	from
+		model : UML!Model
+	to 
+		app : SpringMetamodel!App (
+			name <- model.name,
+			dtos <- model.packagedElement->select(c | c.oclIsKindOf(UML!Class))
+		)
+}
+
+rule dtoClass2dto {
+	from
+		dtoClass : UML!Class
+	to 
+		dto : SpringMetamodel!DTO (
+			name <- dtoClass.name.concat('DTO'),
+			attrbiutes <- dtoClass.attribute
+		)
+}
+
+rule property2attribute {
+	from
+		property : UML!Property
+	to 
+		attribute : SpringMetamodel!Attrbiute (
+			name <- property.name
+		)
+}
