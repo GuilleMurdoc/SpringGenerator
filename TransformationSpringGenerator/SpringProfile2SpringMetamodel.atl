@@ -20,7 +20,7 @@ rule dtoClass2dto {
 	to 
 		dto : SpringMetamodel!DTO (
 			name <- dtoClass.name.concat('DTO'),
-			attrbiutes <- dtoClass.attribute
+			attributes <- dtoClass.attribute
 		)
 }
 
@@ -28,7 +28,7 @@ rule property2attribute {
 	from
 		property : UML!Property
 	to 
-		attribute : SpringMetamodel!Attrbiute (
+		attribute : SpringMetamodel!Attribute (
 			name <- property.name
 		)
 }
