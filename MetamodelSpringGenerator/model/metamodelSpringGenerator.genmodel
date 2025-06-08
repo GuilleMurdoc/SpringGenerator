@@ -17,10 +17,10 @@
     </genClasses>
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//DTO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//DTO/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//DTO/attrbiutes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//DTO/attributes"/>
     </genClasses>
-    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//Attrbiute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Attrbiute/name"/>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Attribute/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
