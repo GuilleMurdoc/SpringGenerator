@@ -22,7 +22,8 @@
 [/template]
 
 [template private writePackage(dto : DTO)]
-package basePackage(TODO).dtos.package(TODO);
+[comment TODO basePackage and package/]
+package basePackage.dtos.package;
 [/template]
 
 [template private writeImports(dto : DTO)]
@@ -37,11 +38,13 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class [dto.name/] extends DTO(TODO) {
+[comment TODO extension/]
+public class [dto.name/] extends DTO {
 [/template]
 
 [template private writeClassAttributes(dto : DTO)]
 [for (attribute : Attribute | dto.attributes)]
+[comment TODO type of attribute/]
 	private Type(TODO) [attribute.name/];
 
 [/for]
