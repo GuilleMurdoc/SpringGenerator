@@ -5,14 +5,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="App">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dtos" upperBound="-1" eType="#//DTO"
-        containment="true"/>
+        containment="true" eOpposite="#//DTO/app"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DTO">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="app" lowerBound="1" eType="#//App"
+        eOpposite="#//App/dtos"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
+        eType="#//Attribute" containment="true" eOpposite="#//Attribute/dto"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dto" lowerBound="1" eType="#//DTO"
+        eOpposite="#//DTO/attributes"/>
   </eClassifiers>
 </ecore:EPackage>
