@@ -13,14 +13,16 @@
       ecorePackage="metamodelSpringGenerator.ecore#/">
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//App">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//App/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//App/dtos"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//App/dtos"/>
     </genClasses>
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//DTO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//DTO/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//DTO/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//DTO/app"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//DTO/attributes"/>
     </genClasses>
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Attribute/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Attribute/dto"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
