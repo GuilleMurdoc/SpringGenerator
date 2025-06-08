@@ -4,11 +4,60 @@
 
 [template public generateElement(app : App)]
 [comment @main/]
-
 [for (dto : DTO | app.dtos)]
 	[file (app.name.concat('/').concat(dto.name.concat('.java')), false, 'UTF-8')]
+[writePackage(dto)/]
 
+[writeImports(dto)/]
+
+[writeClassHeader(dto)/]
+
+[if (dto.attributes->notEmpty())]
+[writeClassAttributes(dto)/]
+[writeClassConstructor(dto)/]
+[/if]
+[writeEndFile()/]
 	[/file]
 [/for]
+[/template]
 
+[template private writePackage(dto : DTO)]
+package basePackage(TODO).dtos.package(TODO);
+[/template]
+
+[template private writeImports(dto : DTO)]
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+[/template]
+
+[template private writeClassHeader(dto : DTO)]
+@Data
+@NoArgsConstructor
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class [dto.name/] extends DTO(TODO) {
+[/template]
+
+[template private writeClassAttributes(dto : DTO)]
+[for (attribute : Attribute | dto.attributes)]
+	private Type(TODO) [attribute.name/];
+
+[/for]
+[/template]
+
+[template private writeClassConstructor(dto : DTO)]
+	public [dto.name/]DTO(
+[for (attribute : Attribute | dto.attributes)]
+			String [attribute.name/][if (attribute <> dto.attributes->last())],[/if][if (attribute = dto.attributes->last())]) {[/if]
+[/for]
+[for (attribute : Attribute | dto.attributes)]
+		this.[attribute.name/] = [attribute.name/];
+[/for]
+	}
+[/template]
+
+[template private writeEndFile(any : OclAny)]
+}
 [/template]
