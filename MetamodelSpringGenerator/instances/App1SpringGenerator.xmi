@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator">
+  <metamodelSpringGenerator:App name="App1SpringGenerator" basePackage="base"/>
+  <metamodelSpringGenerator:DTO name="Example1DTO" package="">
+    <attributes name="example"/>
+  </metamodelSpringGenerator:DTO>
+  <metamodelSpringGenerator:DTO name="Example2DTO" package="base2">
+    <attributes name="example2"/>
+    <attributes name="example3"/>
+  </metamodelSpringGenerator:DTO>
+</xmi:XMI>
