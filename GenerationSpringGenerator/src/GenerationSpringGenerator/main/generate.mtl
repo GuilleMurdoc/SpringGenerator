@@ -23,7 +23,7 @@
 
 [template private writePackage(dto : DTO)]
 [comment TODO basePackage and package/]
-package basePackage.dtos.package;
+package [dto.app.basePackage/].dtos[if (dto._package.size() <> 0)].[/if][dto._package/];
 [/template]
 
 [template private writeImports(dto : DTO)]

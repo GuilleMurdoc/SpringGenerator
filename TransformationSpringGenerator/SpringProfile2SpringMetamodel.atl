@@ -1,5 +1,6 @@
 -- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
 -- @path SpringMetamodel=/MetamodelSpringGenerator/model/metamodelSpringGenerator.ecore
+-- @attribute appRootPackageName : String = 'App1SpringGenerator'
 
 module SpringProfile2SpringMetamodel;
 create OUT : SpringMetamodel from IN : UML;
@@ -9,8 +10,9 @@ rule model2app {
 		model : UML!Model
 	to 
 		app : SpringMetamodel!App (
-			name <- model.name,
-			dtos <- model.packagedElement->select(c | c.oclIsKindOf(UML!Class))
+			name <- model.name.concat(model.allClasses()->size()),
+			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
+			dtos <- model.allClasses()
 		)
 }
 
@@ -20,7 +22,8 @@ rule dtoClass2dto {
 	to 
 		dto : SpringMetamodel!DTO (
 			name <- dtoClass.name.concat('DTO'),
-			attributes <- dtoClass.attribute
+			attributes <- dtoClass.attribute,
+			package <- thisModule.getPackageString(thisModule.reverse(dtoClass.allPackages()->select(p | not p.isBase())))
 		)
 }
 
@@ -32,3 +35,51 @@ rule property2attribute {
 			name <- property.name
 		)
 }
+
+helper context UML!Class def: allPackages() : Sequence(UML!Package) =
+    if self.package.oclIsUndefined() then
+        Sequence{}
+    else
+        self.package.allPackages()->prepend(self.package)
+    endif;
+
+helper context UML!Package def: allPackages() : Sequence(UML!Package) =
+    if self.isBase() then
+        Sequence{}
+    else
+        self.nestingPackage.allPackages()->prepend(self.nestingPackage)
+    endif;
+
+helper context UML!Package def: isBase() : Boolean =
+    self.nestingPackage.name = 'App1SpringGenerator';
+
+helper def : getPackageString(packages : Sequence(UML!Package)) : String =
+	packages->collect(p | p.name)->iterate(p; pString: String = '' |
+		if pString = '' then p else pString.concat('.').concat(p) endif
+);
+
+helper def : reverse(seq : Sequence(OclAny)) : Sequence(OclAny) =
+    seq->iterate(elem; rev : Sequence(OclAny) = Sequence{} |
+        rev->prepend(elem));
+
+helper def : getBasePackage(elements : Sequence(OclAny)) : UML!Package =
+	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | p.isBase()) ->first();
+
+helper context UML!Model def : allClasses() : Sequence(UML!Class) =
+    let directClasses : Sequence(UML!Class) = self.packagedElement->select(e | e.oclIsKindOf(UML!Class)) in
+    let nestedClasses : Sequence(UML!Class) =
+        self.packagedElement->select(e | e.oclIsKindOf(UML!Package))
+        ->collect(e | let p : UML!Package = e in p.allClasses())
+        ->flatten()
+    in
+    directClasses->union(nestedClasses);
+    
+helper context UML!Package def : allClasses() : Sequence(UML!Class) =
+    let directClasses : Sequence(UML!Class) = self.packagedElement->select(e | e.oclIsKindOf(UML!Class)) in
+    let nestedClasses : Sequence(UML!Class) =
+        self.packagedElement->select(e | e.oclIsKindOf(UML!Package))
+        ->collect(e | let p : UML!Package = e in p.allClasses())
+        ->flatten()
+    in
+    directClasses->union(nestedClasses);
+    
