@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><metamodelSpringGenerator:App xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://metamodelSpringGenerator ../model/metamodelSpringGenerator.ecore" xmi:version="2.0" name="App1SpringGenerator2" basePackage="base">
       
-    <metamodelSpringGenerator:App xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://metamodelSpringGenerator ../model/metamodelSpringGenerator.ecore" xmi:version="" name="App1SpringGenerator" basePackage="base"/>
-      
-    <metamodelSpringGenerator:DTO name="Example1DTO" package="">
+    <dtos name="Example1DTO" package="">
             
         <attributes name="example"/>
           
-    </metamodelSpringGenerator:DTO>
+    </dtos>
       
-    <metamodelSpringGenerator:DTO name="Example2DTO" package="base2">
+    <dtos name="Example2DTO" package="base2">
             
         <attributes name="example2"/>
             
         <attributes name="example3"/>
           
-    </metamodelSpringGenerator:DTO>
+    </dtos>
     
-</xmi:XMI>
+</metamodelSpringGenerator:App>

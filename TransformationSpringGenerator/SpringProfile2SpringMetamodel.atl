@@ -10,9 +10,9 @@ rule model2app {
 		model : UML!Model
 	to 
 		app : SpringMetamodel!App (
-			name <- model.name,
+			name <- model.name.concat(model.allClasses()->size()),
 			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
-			dtos <- model.packagedElement->select(c | c.oclIsKindOf(UML!Class))
+			dtos <- model.allClasses()
 		)
 }
 
@@ -64,3 +64,22 @@ helper def : reverse(seq : Sequence(OclAny)) : Sequence(OclAny) =
 
 helper def : getBasePackage(elements : Sequence(OclAny)) : UML!Package =
 	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | p.isBase()) ->first();
+
+helper context UML!Model def : allClasses() : Sequence(UML!Class) =
+    let directClasses : Sequence(UML!Class) = self.packagedElement->select(e | e.oclIsKindOf(UML!Class)) in
+    let nestedClasses : Sequence(UML!Class) =
+        self.packagedElement->select(e | e.oclIsKindOf(UML!Package))
+        ->collect(e | let p : UML!Package = e in p.allClasses())
+        ->flatten()
+    in
+    directClasses->union(nestedClasses);
+    
+helper context UML!Package def : allClasses() : Sequence(UML!Class) =
+    let directClasses : Sequence(UML!Class) = self.packagedElement->select(e | e.oclIsKindOf(UML!Class)) in
+    let nestedClasses : Sequence(UML!Class) =
+        self.packagedElement->select(e | e.oclIsKindOf(UML!Package))
+        ->collect(e | let p : UML!Package = e in p.allClasses())
+        ->flatten()
+    in
+    directClasses->union(nestedClasses);
+    
