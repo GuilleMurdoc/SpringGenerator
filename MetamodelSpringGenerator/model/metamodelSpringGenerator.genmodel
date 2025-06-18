@@ -11,6 +11,11 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="MetamodelSpringGenerator" disposableProviderFactory="true"
       ecorePackage="metamodelSpringGenerator.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metamodelSpringGenerator.ecore#//PrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//PrimitiveType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//PrimitiveType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//PrimitiveType/Double"/>
+    </genEnums>
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//App">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//App/name"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//App/dtos"/>
