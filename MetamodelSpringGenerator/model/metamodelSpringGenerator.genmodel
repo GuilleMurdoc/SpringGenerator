@@ -39,5 +39,7 @@
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//AttributeType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//AttributeType/type"/>
     </genClasses>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//SimpleAttributeType"/>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//ListAttributeType"/>
   </genPackages>
 </genmodel:GenModel>
