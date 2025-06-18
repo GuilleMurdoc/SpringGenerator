@@ -32,6 +32,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Attribute/dto"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Attribute/type"/>
     </genClasses>
-    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//Type"/>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Type/primitiveType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Type/dto"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
