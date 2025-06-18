@@ -38,6 +38,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Type"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleAttributeType" eSuperTypes="#//AttributeType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleAttributeType" eSuperTypes="#//AttributeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListAttributeType" eSuperTypes="#//AttributeType"/>
 </ecore:EPackage>
