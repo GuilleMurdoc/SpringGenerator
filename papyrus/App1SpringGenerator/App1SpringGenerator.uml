@@ -8,12 +8,19 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_r4ZLMD7XEfCIZM_H8zyh1w" name="Example1">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_wWWkQD7XEfCIZM_H8zyh1w" name="example">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GVToMExoEfCJ-Y1r3jHfBg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GVrboExoEfCJ-Y1r3jHfBg" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_KrzuYExoEfCJ-Y1r3jHfBg" name="Property2">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MeSYoExoEfCJ-Y1r3jHfBg"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_QVO-sEYKEfC6KtlT9bdagg" name="base2">
         <packagedElement xmi:type="uml:Class" xmi:id="_2ikO4D7XEfCIZM_H8zyh1w" name="Example2">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_5st2sD7XEfCIZM_H8zyh1w" name="example2">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HvypMExoEfCJ-Y1r3jHfBg" value="*"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_CaZ_kD7YEfCIZM_H8zyh1w" name="example3">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
