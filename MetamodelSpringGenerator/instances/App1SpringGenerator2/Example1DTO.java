@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.lang.Nullable
+
 
 @Data
 @NoArgsConstructor
@@ -11,11 +13,16 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class Example1DTO extends DTO {
 
-	private Type(TODO) example;
+	private List<String> example;
+
+	@Nullable
+	private Double Property2;
 
 
 	public Example1DTODTO(
-			String example) {
+			List<String> example,
+			Double Property2) {
 		this.example = example;
+		this.Property2 = Property2;
 	}
 }
