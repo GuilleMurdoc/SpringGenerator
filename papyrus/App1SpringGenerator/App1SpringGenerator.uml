@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_qBrN4ErPEfC-47cgXlu9yg/55" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_qBrN4ErPEfC-47cgXlu9yg/55 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_qBwGYErPEfC-47cgXlu9yg">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_6By6AE-aEfCuudK7uqH2xg/56" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_6By6AE-aEfCuudK7uqH2xg/56 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_6B3ygE-aEfCuudK7uqH2xg">
   <uml:Model xmi:id="_J0PwYD7XEfCE1Jn6loJQ0A" name="App1SpringGenerator">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_J04pkD7XEfCE1Jn6loJQ0A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -27,17 +27,34 @@
           </ownedAttribute>
         </packagedElement>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-vxsEE-aEfCuudK7uqH2xg" name="DTO3">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_HV3YIE-bEfCuudK7uqH2xg" name="integerList">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M8K5UE-bEfCuudK7uqH2xg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L3FgkE-bEfCuudK7uqH2xg" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Uu9gMk-bEfCuudK7uqH2xg" name="example1" type="_r4ZLMD7XEfCIZM_H8zyh1w" association="_Uu85IE-bEfCuudK7uqH2xg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Uu9gM0-bEfCuudK7uqH2xg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Uu9gNE-bEfCuudK7uqH2xg" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Uu85IE-bEfCuudK7uqH2xg" memberEnd="_Uu9gMk-bEfCuudK7uqH2xg _Uu9gNU-bEfCuudK7uqH2xg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Uu9gME-bEfCuudK7uqH2xg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Uu9gMU-bEfCuudK7uqH2xg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Uu9gNU-bEfCuudK7uqH2xg" name="dto3" type="_-vxsEE-aEfCuudK7uqH2xg" association="_Uu85IE-bEfCuudK7uqH2xg"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_J0bWkD7XEfCE1Jn6loJQ0A">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rV3ZoErPEfC-47cgXlu9yg" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rV3ZoUrPEfC-47cgXlu9yg" key="Version" value="0.0.56"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rV3ZokrPEfC-47cgXlu9yg" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rV3Zo0rPEfC-47cgXlu9yg" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rV3ZpErPEfC-47cgXlu9yg" key="Date" value="2025-06-16"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rV3ZpUrPEfC-47cgXlu9yg" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7eSGIE-aEfCuudK7uqH2xg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7eSGIU-aEfCuudK7uqH2xg" key="Version" value="0.0.57"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7eSGIk-aEfCuudK7uqH2xg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7eSGI0-aEfCuudK7uqH2xg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7eSGJE-aEfCuudK7uqH2xg" key="Date" value="2025-06-22"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7eSGJU-aEfCuudK7uqH2xg" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J0dLwD7XEfCE1Jn6loJQ0A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_qBwGYErPEfC-47cgXlu9yg"/>
+        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_6B3ygE-aEfCuudK7uqH2xg"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_fu-NMD7VEfCvDuOhuCRWWA"/>
     </profileApplication>
@@ -47,4 +64,5 @@
   <ProfileSpringGenerator:DtoPackage xmi:id="_WOa_oEYKEfC6KtlT9bdagg" base_Package="_QVO-sEYKEfC6KtlT9bdagg"/>
   <ProfileSpringGenerator:DtoBasePackage xmi:id="_XCGDAEYwEfCOg-vVVYwSyg" base_Package="_gx_pMESjEfC_mOAYedgu4w"/>
   <ProfileSpringGenerator:DtoPackage xmi:id="_yG6PoErPEfC-47cgXlu9yg" base_Package="_gx_pMESjEfC_mOAYedgu4w"/>
+  <ProfileSpringGenerator:DTO xmi:id="_C9N84E-bEfCuudK7uqH2xg" base_Class="_-vxsEE-aEfCuudK7uqH2xg"/>
 </xmi:XMI>

@@ -5,7 +5,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
 @Data
 @NoArgsConstructor
 @ToString(callSuper = true)
@@ -13,6 +12,7 @@ import lombok.ToString;
 public class Example2DTO extends DTO {
 
 	private List<String> example2;
+
 
 	private Integer example3;
 

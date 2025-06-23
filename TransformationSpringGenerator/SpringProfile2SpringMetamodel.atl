@@ -21,12 +21,12 @@ rule dtoClass2dto {
 	to 
 		dto : SpringMetamodel!DTO (
 			name <- dtoClass.name.concat('DTO'),
-			attributes <- dtoClass.attribute,
+			attributes <- dtoClass.attribute->collect(attr | thisModule.property2attribute(attr)),
 			package <- thisModule.getPackageString(thisModule.reverse(dtoClass.allPackages()->select(p | not p.isBase())))
 		)
 }
 
-rule property2attribute {
+lazy rule property2attribute {
 	from
 		property : UML!Property
 	to 
@@ -45,7 +45,7 @@ lazy rule property2simpleAttributeType {
 		property : UML!Property
 	to 
 		attributeType : SpringMetamodel!SimpleAttributeType (
-			type <- thisModule.type2type(property.type),
+			type <- thisModule.property2type(property),
 			nullable <- property.lower = 0
 		)
 }
@@ -55,18 +55,25 @@ lazy rule property2listAttributeType {
 		property : UML!Property
 	to 
 		attributeType : SpringMetamodel!ListAttributeType (
-			type <- thisModule.type2type(property.type)
+			type <- thisModule.property2type(property)
 		)
 }
 
 -- AttributeType --
 
-lazy rule type2type {
+lazy rule property2type {
 	from
-		umlType : UML!Type
+		property : UML!Property
 	to 
 		springType : SpringMetamodel!Type (
-			primitiveType <- thisModule.umlTypeToPrimitiveType(umlType.name)
+			dto <- if not property.association.oclIsUndefined()
+				then property.type
+				else OclUndefined
+			endif,
+			primitiveType <- if property.association.oclIsUndefined()
+				then thisModule.umlTypeToPrimitiveType(property.type.name)
+				else OclUndefined
+			endif
 		)
 }
 

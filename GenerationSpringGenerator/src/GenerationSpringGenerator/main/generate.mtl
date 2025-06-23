@@ -9,7 +9,6 @@
 [writePackage(dto)/]
 
 [writeImports(dto)/]
-
 [writeClassHeader(dto)/]
 
 [if (dto.attributes->notEmpty())]
@@ -22,7 +21,7 @@
 [/template]
 
 [template private writePackage(dto : DTO)]
-package [dto.app.basePackage/].dtos[if (dto._package.size() <> 0)].[/if][dto._package/];
+package [getPackageName(dto)/];
 [/template]
 
 [template private writeImports(dto : DTO)]
@@ -33,6 +32,15 @@ import lombok.ToString;
 [if (needsNullableImport(dto))]
 import org.springframework.lang.Nullable
 [/if]
+[writeAttributesImports(dto)/]
+[/template]
+
+[template private writeAttributesImports(dto : DTO)]
+[for (dtoAttribute : Attribute | dto.attributes->select(att | not att.attributetype.type.dto.oclIsUndefined()) )]
+[let dto : DTO = dtoAttribute.attributetype.type.dto]
+import [getPackageName(dto)/].[dto.name/];
+[/let]
+[/for]
 [/template]
 
 [template private writeClassHeader(dto : DTO)]
@@ -47,9 +55,7 @@ public class [dto.name/] extends DTO {
 [template private writeClassAttributes(dto : DTO)]
 [for (attribute : Attribute | dto.attributes)]
 [if (attribute.attributetype.oclIsKindOf(SimpleAttributeType))]
-[if (attribute.attributetype.oclAsType(SimpleAttributeType).nullable)]
-	@Nullable
-[/if]
+[if (attribute.attributetype.oclAsType(SimpleAttributeType).nullable)]	@Nullable[/if]
 [/if]
 	private [getAttributeType(attribute)/] [attribute.name/];
 
@@ -105,3 +111,7 @@ public class [dto.name/] extends DTO {
 	)
 /]
 
+[query private getPackageName(dto : DTO) : String =
+  dto.app.basePackage + '.dtos' + 
+  (if (dto._package.size() <> 0) then '.' + dto._package else '' endif) 
+/]

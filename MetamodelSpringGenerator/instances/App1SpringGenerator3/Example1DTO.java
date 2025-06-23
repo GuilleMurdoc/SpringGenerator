@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.lang.Nullable
 
-
 @Data
 @NoArgsConstructor
 @ToString(callSuper = true)
