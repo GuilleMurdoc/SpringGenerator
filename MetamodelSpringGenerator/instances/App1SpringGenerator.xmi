@@ -11,6 +11,11 @@
         <type primitiveType="Double"/>
       </attributetype>
     </attributes>
+    <attributes name="dto3">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type dto="//@dtos.1"/>
+      </attributetype>
+    </attributes>
   </dtos>
   <dtos name="DTO3DTO" package="">
     <attributes name="integerList">

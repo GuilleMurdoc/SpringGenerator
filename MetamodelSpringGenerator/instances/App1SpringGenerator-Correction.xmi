@@ -21,6 +21,16 @@
             </attributetype>
                 
         </attributes>
+            
+        <attributes name="dto3">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type dto="//@dtos.1"/>
+                      
+            </attributetype>
+                
+        </attributes>
           
     </dtos>
       
