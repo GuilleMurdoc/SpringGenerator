@@ -21,19 +21,71 @@ rule dtoClass2dto {
 	to 
 		dto : SpringMetamodel!DTO (
 			name <- dtoClass.name.concat('DTO'),
-			attributes <- dtoClass.attribute,
+			attributes <- dtoClass.attribute->collect(attr | thisModule.property2attribute(attr)),
 			package <- thisModule.getPackageString(thisModule.reverse(dtoClass.allPackages()->select(p | not p.isBase())))
 		)
 }
 
-rule property2attribute {
+lazy rule property2attribute {
 	from
 		property : UML!Property
 	to 
 		attribute : SpringMetamodel!Attribute (
-			name <- property.name
+			name <- property.name,
+			attributetype <- if property.upper = -1
+				then thisModule.property2listAttributeType(property)
+				else thisModule.property2simpleAttributeType(property) endif
 		)
 }
+
+-- AttributeType --
+
+lazy rule property2simpleAttributeType {
+	from
+		property : UML!Property
+	to 
+		attributeType : SpringMetamodel!SimpleAttributeType (
+			type <- thisModule.property2type(property),
+			nullable <- property.lower = 0
+		)
+}
+
+lazy rule property2listAttributeType {
+	from
+		property : UML!Property
+	to 
+		attributeType : SpringMetamodel!ListAttributeType (
+			type <- thisModule.property2type(property)
+		)
+}
+
+-- AttributeType --
+
+lazy rule property2type {
+	from
+		property : UML!Property
+	to 
+		springType : SpringMetamodel!Type (
+			dto <- if not property.association.oclIsUndefined()
+				then property.type
+				else OclUndefined
+			endif,
+			primitiveType <- if property.association.oclIsUndefined()
+				then thisModule.umlTypeToPrimitiveType(property.type.name)
+				else OclUndefined
+			endif
+		)
+}
+
+helper def : umlTypeToPrimitiveType(umlType : String) : String =
+	let type : String = umlType.toLower() in
+	if type.indexOf('int') > -1  or type.indexOf('long') > -1
+		then 'Integer'
+	else
+	if type.indexOf('double') > -1 or type.indexOf('float') > -1
+		then 'Double'
+	else 'String' endif endif;
+
 
 -- allPackages --
 

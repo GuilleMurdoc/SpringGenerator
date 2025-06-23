@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<metamodelSpringGenerator:App xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" name="App1SpringGenerator2" basePackage="base">
+<metamodelSpringGenerator:App xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" name="App1SpringGenerator3" basePackage="base">
   <dtos name="Example1DTO" package="">
-    <attributes name="example"/>
+    <attributes name="example">
+      <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+    <attributes name="Property2">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType" nullable="true">
+        <type primitiveType="Double"/>
+      </attributetype>
+    </attributes>
+    <attributes name="dto3">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type dto="//@dtos.1"/>
+      </attributetype>
+    </attributes>
+  </dtos>
+  <dtos name="DTO3DTO" package="">
+    <attributes name="integerList">
+      <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
+        <type primitiveType="Integer"/>
+      </attributetype>
+    </attributes>
+    <attributes name="example1">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType" nullable="true">
+        <type dto="//@dtos.0"/>
+      </attributetype>
+    </attributes>
   </dtos>
   <dtos name="Example2DTO" package="base2">
-    <attributes name="example2"/>
-    <attributes name="example3"/>
+    <attributes name="example2">
+      <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+    <attributes name="example3">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="Integer"/>
+      </attributetype>
+    </attributes>
   </dtos>
 </metamodelSpringGenerator:App>

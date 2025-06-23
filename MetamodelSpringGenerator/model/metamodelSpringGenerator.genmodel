@@ -11,6 +11,11 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="MetamodelSpringGenerator" disposableProviderFactory="true"
       ecorePackage="metamodelSpringGenerator.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metamodelSpringGenerator.ecore#//PrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//PrimitiveType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//PrimitiveType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//PrimitiveType/Double"/>
+    </genEnums>
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//App">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//App/name"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//App/dtos"/>
@@ -25,6 +30,18 @@
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Attribute/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Attribute/dto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Attribute/attributetype"/>
     </genClasses>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Type/primitiveType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Type/dto"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//AttributeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//AttributeType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//SimpleAttributeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//SimpleAttributeType/nullable"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodelSpringGenerator.ecore#//ListAttributeType"/>
   </genPackages>
 </genmodel:GenModel>
