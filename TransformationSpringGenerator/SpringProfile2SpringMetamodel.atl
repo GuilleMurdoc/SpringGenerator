@@ -9,7 +9,7 @@ rule model2app {
 		model : UML!Model
 	to 
 		app : SpringMetamodel!App (
-			name <- model.name.concat(model.allClasses()->size()),
+			name <- model.name,
 			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
 			dtos <- model.allClasses()
 		)
