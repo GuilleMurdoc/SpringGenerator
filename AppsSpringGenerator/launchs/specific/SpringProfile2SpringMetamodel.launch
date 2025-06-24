@@ -37,8 +37,8 @@
         <mapEntry key="OUT" value="SpringMetamodel"/>
     </mapAttribute>
     <mapAttribute key="Path">
-        <mapEntry key="IN" value="ext:C:\RepositoriosProgramacion\SpringGenerator\papyrus\App1SpringGenerator\App1SpringGenerator.uml"/>
-        <mapEntry key="OUT" value="/MetamodelSpringGenerator/instances/App1SpringGenerator.xmi"/>
+        <mapEntry key="IN" value="ext:C:\RepositoriosProgramacion\SpringGenerator\papyrus\AppSpringGenerator\AppSpringGenerator.uml"/>
+        <mapEntry key="OUT" value="/MetamodelSpringGenerator/instances/AppSpringGenerator(Draft).xmi"/>
         <mapEntry key="SpringMetamodel" value="/MetamodelSpringGenerator/model/metamodelSpringGenerator.ecore"/>
         <mapEntry key="UML" value="uri:http://www.eclipse.org/uml2/5.0.0/UML"/>
     </mapAttribute>

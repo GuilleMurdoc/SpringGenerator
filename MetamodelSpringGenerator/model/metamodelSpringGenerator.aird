@@ -3,7 +3,7 @@
   <viewpoint:DAnalysis uid="_zGj8EDyoEfC0K-o1huMdCQ" selectedViews="_0LkcUDyoEfC0K-o1huMdCQ" version="15.4.1.202403191723">
     <semanticResources>metamodelSpringGenerator.ecore</semanticResources>
     <semanticResources>metamodelSpringGenerator.genmodel</semanticResources>
-    <semanticResources>../instances/App1SpringGenerator-Correction.xmi</semanticResources>
+    <semanticResources>../instances/AppSpringGenerator.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_0LkcUDyoEfC0K-o1huMdCQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0OX4sDyoEfC0K-o1huMdCQ" name="metamodelSpringGenerator" repPath="#_0Na2cDyoEfC0K-o1huMdCQ" changeId="1750625310693">

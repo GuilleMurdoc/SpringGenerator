@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?><metamodelSpringGenerator:App xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://metamodelSpringGenerator ../model/metamodelSpringGenerator.ecore" xmi:version="2.0" name="AppSpringGenerator7" basePackage="com.company.app.data">
+      
+    <dtos name="ErrorDTO" package="">
+            
+        <attributes name="title">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="message">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+          
+    </dtos>
+      
+    <dtos name="IdentifierDTO" package="">
+            
+        <attributes name="id">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Integer"/>
+                      
+            </attributetype>
+                
+        </attributes>
+          
+    </dtos>
+      
+    <dtos name="AddressesDTO" package="">
+            
+        <attributes name="city">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="postalCode">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="street">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="portalNumber">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Integer"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="departmentNumber">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType" nullable="true">
+                        
+                <type primitiveType="Integer"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="country">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+          
+    </dtos>
+      
+    <dtos name="CustomerDTO" package="">
+            
+        <attributes name="dni">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="name">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="addresses">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
+                        
+                <type dto="//@dtos.2"/>
+                      
+            </attributetype>
+                
+        </attributes>
+          
+    </dtos>
+      
+    <dtos name="ExpeditionBasicDTO" package="expedition">
+            
+        <attributes name="status">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="deliveryAddress">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type dto="//@dtos.2"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="customer">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type dto="//@dtos.3"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="parcels">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
+                        
+                <type dto="//@dtos.5"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="delivery">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType" nullable="true">
+                        
+                <type dto="//@dtos.6"/>
+                      
+            </attributetype>
+                
+        </attributes>
+          
+    </dtos>
+      
+    <dtos name="ParcelDTO" package="expedition">
+            
+        <attributes name="status">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="height">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Double"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="width">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Double"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="depth">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Double"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="volume">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Double"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="weight">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Double"/>
+                      
+            </attributetype>
+                
+        </attributes>
+          
+    </dtos>
+      
+    <dtos name="DeliveryDTO" package="expedition">
+            
+        <attributes name="dni">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+            
+        <attributes name="name">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="String"/>
+                      
+            </attributetype>
+                
+        </attributes>
+          
+    </dtos>
+    
+</metamodelSpringGenerator:App>
