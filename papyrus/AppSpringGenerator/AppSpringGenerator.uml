@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_jCqUMFDsEfCwvM-0nhwCCw/81" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_jCqUMFDsEfCwvM-0nhwCCw/81 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_jCvMsFDsEfCwvM-0nhwCCw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_QFwuEFEoEfCq0qAqC8X4_w/87" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_QFwuEFEoEfCq0qAqC8X4_w/87 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_QF1mkFEoEfCq0qAqC8X4_w">
   <uml:Model xmi:id="_rXDMQFDsEfCwvM-0nhwCCw" name="AppSpringGenerator">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_rYTwgFDsEfCwvM-0nhwCCw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -129,21 +129,20 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_rOi-RVDxEfCwvM-0nhwCCw" name="expeditionbasic" type="_gi1w4FDuEfCwvM-0nhwCCw" association="_rOiXMFDxEfCwvM-0nhwCCw"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_rX2dgFDsEfCwvM-0nhwCCw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rX45wVDsEfCwvM-0nhwCCw" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rX45wlDsEfCwvM-0nhwCCw" key="Version" value="0.1.0"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rX45w1DsEfCwvM-0nhwCCw" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rX45xFDsEfCwvM-0nhwCCw" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rX45xVDsEfCwvM-0nhwCCw" key="Date" value="2025-06-24"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rX45xlDsEfCwvM-0nhwCCw" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_R18SQFEoEfCq0qAqC8X4_w" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R18SQVEoEfCq0qAqC8X4_w" key="Version" value="0.1.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R18SQlEoEfCq0qAqC8X4_w" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R18SQ1EoEfCq0qAqC8X4_w" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R18SRFEoEfCq0qAqC8X4_w" key="Date" value="2025-06-24"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R18SRVEoEfCq0qAqC8X4_w" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rX45wFDsEfCwvM-0nhwCCw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_jCvMsFDsEfCwvM-0nhwCCw"/>
+        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_QF1mkFEoEfCq0qAqC8X4_w"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_fu-NMD7VEfCvDuOhuCRWWA"/>
     </profileApplication>
   </uml:Model>
-  <ProfileSpringGenerator:DtoPackage xmi:id="_5xAUYFDsEfCwvM-0nhwCCw" base_Package="_utRhMFDsEfCwvM-0nhwCCw"/>
-  <ProfileSpringGenerator:DtoBasePackage xmi:id="_5xFM4FDsEfCwvM-0nhwCCw" base_Package="_utRhMFDsEfCwvM-0nhwCCw"/>
+  <ProfileSpringGenerator:DtoPackage xmi:id="_5xAUYFDsEfCwvM-0nhwCCw" base_Package="_utRhMFDsEfCwvM-0nhwCCw" base="true"/>
   <ProfileSpringGenerator:DTO xmi:id="_HJTyQFDtEfCwvM-0nhwCCw" base_Class="_F0nQMFDtEfCwvM-0nhwCCw"/>
   <ProfileSpringGenerator:DTO xmi:id="_RwJYoFDuEfCwvM-0nhwCCw" base_Class="_PhXM4FDuEfCwvM-0nhwCCw"/>
   <ProfileSpringGenerator:DtoPackage xmi:id="_eYtboFDuEfCwvM-0nhwCCw" base_Package="_av0pYFDuEfCwvM-0nhwCCw"/>

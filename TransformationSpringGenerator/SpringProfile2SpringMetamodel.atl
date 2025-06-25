@@ -9,7 +9,7 @@ rule model2app {
 		model : UML!Model
 	to 
 		app : SpringMetamodel!App (
-			name <- model.name.concat(model.allClasses()->size()),
+			name <- model.name,
 			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
 			dtos <- model.allClasses()
 		)
@@ -127,7 +127,7 @@ helper context UML!Package def : allClasses() : Sequence(UML!Class) =
 -- allClasses --
 
 helper context UML!Package def: isBase() : Boolean =
-    self.nestingPackage.name = 'AppSpringGenerator';
+	self.getValue(self.getStereotype('DtoPackage'), 'base');
 
 helper def : getBasePackage(elements : Sequence(OclAny)) : UML!Package =
 	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | p.isBase()) ->first();
@@ -140,3 +140,5 @@ helper def : getPackageString(packages : Sequence(UML!Package)) : String =
 helper def : reverse(seq : Sequence(OclAny)) : Sequence(OclAny) =
     seq->iterate(elem; rev : Sequence(OclAny) = Sequence{} |
         rev->prepend(elem));
+
+helper context UML!Element def : getStereotype(name : String) : UML!Stereotype = self.getAppliedStereotypes()->select(s | s.qualifiedName = 'ProfileSpringGenerator::'.concat(name))->first();
