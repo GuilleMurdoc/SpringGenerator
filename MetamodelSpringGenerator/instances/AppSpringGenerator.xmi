@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><metamodelSpringGenerator:App xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://metamodelSpringGenerator ../model/metamodelSpringGenerator.ecore" xmi:version="2.0" name="AppSpringGenerator7" basePackage="com.company.app.data">
+<?xml version="1.0" encoding="UTF-8"?><metamodelSpringGenerator:App xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://metamodelSpringGenerator ../model/metamodelSpringGenerator.ecore" xmi:version="2.0" name="AppSpringGenerator" basePackage="com.company.app.data">
       
     <dtos name="ErrorDTO" package="">
             
