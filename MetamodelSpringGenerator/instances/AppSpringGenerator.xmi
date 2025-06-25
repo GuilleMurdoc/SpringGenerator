@@ -187,6 +187,16 @@
             </attributetype>
                 
         </attributes>
+            
+        <attributes name="id">
+                  
+            <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+                        
+                <type primitiveType="Integer"/>
+                      
+            </attributetype>
+                
+        </attributes>
           
     </dtos>
       

@@ -94,6 +94,11 @@
         <type dto="//@dtos.6"/>
       </attributetype>
     </attributes>
+    <attributes name="id">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="Integer"/>
+      </attributetype>
+    </attributes>
   </dtos>
   <dtos name="ParcelDTO" package="expedition">
     <attributes name="status">
