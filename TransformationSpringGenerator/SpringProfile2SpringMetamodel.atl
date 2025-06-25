@@ -11,7 +11,8 @@ rule model2app {
 		app : SpringMetamodel!App (
 			name <- model.name,
 			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
-			dtos <- model.allClasses('DTO')
+			dtos <- model.allStereotypedClasses('DTO'),
+			controllers <- model.allStereotypedClasses('Controller')->collect(ctrClass | thisModule.controllerClass2controller(ctrClass))
 		)
 }
 
@@ -23,6 +24,15 @@ rule dtoClass2dto {
 			name <- dtoClass.name.concat('DTO'),
 			attributes <- dtoClass.getAllAttributes()->collect(attr | thisModule.property2attribute(attr)),
 			package <- thisModule.getPackageString(thisModule.reverse(dtoClass.allPackages()->select(p | not p.isBase())))
+		)
+}
+
+lazy rule controllerClass2controller {
+	from
+		controllerClass : UML!Class (not controllerClass.getStereotype('Controller').oclIsUndefined())
+	to 
+		controller : SpringMetamodel!Controller (
+			name <- controllerClass.getValue(controllerClass.getStereotype('Controller'), 'path')->collect(p | p.name.concat(p.variable.toString()).concat(p.variableType)).toString()
 		)
 }
 
@@ -106,7 +116,7 @@ helper context UML!Package def: allPackages() : Sequence(UML!Package) =
 -- allPackages --
 -- allClasses --
 
-helper context UML!Model def : allClasses(stereotypeName : String) : Sequence(UML!Class) =
+helper context UML!Model def : allStereotypedClasses(stereotypeName : String) : Sequence(UML!Class) =
     self.allClasses()->select(class | not class.getStereotype(stereotypeName).oclIsUndefined());
 
 helper context UML!Model def : allClasses() : Sequence(UML!Class) =
