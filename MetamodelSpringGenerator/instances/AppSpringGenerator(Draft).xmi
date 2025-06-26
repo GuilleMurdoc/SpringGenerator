@@ -144,4 +144,5 @@
       </attributetype>
     </attributes>
   </dtos>
+  <controllers name="Sequence {'publicfalseString'}"/>
 </metamodelSpringGenerator:App>

@@ -54,6 +54,7 @@
         eType="#//Endpoint" containment="true" eOpposite="#//Endpoint/controller"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pathpart" upperBound="-1"
         eType="#//PathPart" containment="true" eOpposite="#//PathPart/controller"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Endpoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
@@ -62,6 +63,7 @@
         eType="#//PathPart" containment="true" eOpposite="#//PathPart/endpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputBody" eType="#//DTO"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputBody" eType="#//DTO"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" lowerBound="1"
         eType="#//HttpMethod" defaultValueLiteral=""/>
   </eClassifiers>

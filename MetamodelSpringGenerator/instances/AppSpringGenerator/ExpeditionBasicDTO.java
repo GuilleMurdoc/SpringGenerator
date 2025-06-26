@@ -31,16 +31,21 @@ public class ExpeditionBasicDTO extends DTO {
 	private DeliveryDTO delivery;
 
 
+	private Integer id;
+
+
 	public ExpeditionBasicDTODTO(
 			String status,
 			AddressesDTO deliveryAddress,
 			CustomerDTO customer,
 			List<ParcelDTO> parcels,
-			DeliveryDTO delivery) {
+			DeliveryDTO delivery,
+			Integer id) {
 		this.status = status;
 		this.deliveryAddress = deliveryAddress;
 		this.customer = customer;
 		this.parcels = parcels;
 		this.delivery = delivery;
+		this.id = id;
 	}
 }
