@@ -6,7 +6,7 @@
     <semanticResources>../instances/AppSpringGenerator.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_0LkcUDyoEfC0K-o1huMdCQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0OX4sDyoEfC0K-o1huMdCQ" name="metamodelSpringGenerator" repPath="#_0Na2cDyoEfC0K-o1huMdCQ" changeId="1750955729542">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0OX4sDyoEfC0K-o1huMdCQ" name="metamodelSpringGenerator" repPath="#_0Na2cDyoEfC0K-o1huMdCQ" changeId="1750962605780">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="metamodelSpringGenerator.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -748,20 +748,20 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RoDoKFD4EfC-tefkytZDHg" sourceNode="_OKlREFD3EfC3vtb-GbP0bw" targetNode="_mKrNAFD3EfC3vtb-GbP0bw" beginLabel="[0..1] controller" endLabel="[0..*] pathpart">
-      <target xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Controller/pathpart"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RoDoKFD4EfC-tefkytZDHg" sourceNode="_OKlREFD3EfC3vtb-GbP0bw" targetNode="_mKrNAFD3EfC3vtb-GbP0bw" beginLabel="[0..1] controller" endLabel="[0..*] pathparts">
+      <target xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Controller/pathparts"/>
       <semanticElements xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//PathPart/controller"/>
-      <semanticElements xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Controller/pathpart"/>
+      <semanticElements xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Controller/pathparts"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_TPC0MFD4EfC-tefkytZDHg" description="_EZw3HUSdEfCcRMczpJ4kag" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_TPC0MVD4EfC-tefkytZDHg" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_TPC0MlD4EfC-tefkytZDHg" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_VaO5TlD4EfC-tefkytZDHg" sourceNode="_cDC1sFD3EfC3vtb-GbP0bw" targetNode="_mKrNAFD3EfC3vtb-GbP0bw" beginLabel="[0..1] endpoint" endLabel="[0..*] pathpart">
-      <target xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Endpoint/pathpart"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_VaO5TlD4EfC-tefkytZDHg" sourceNode="_cDC1sFD3EfC3vtb-GbP0bw" targetNode="_mKrNAFD3EfC3vtb-GbP0bw" beginLabel="[0..1] endpoint" endLabel="[0..*] pathparts">
+      <target xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Endpoint/pathparts"/>
       <semanticElements xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//PathPart/endpoint"/>
-      <semanticElements xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Endpoint/pathpart"/>
+      <semanticElements xmi:type="ecore:EReference" href="metamodelSpringGenerator.ecore#//Endpoint/pathparts"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_WTHpDFD4EfC-tefkytZDHg" description="_EZw3HUSdEfCcRMczpJ4kag" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_WTHpDVD4EfC-tefkytZDHg" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_WTHpDlD4EfC-tefkytZDHg" showIcon="false"/>

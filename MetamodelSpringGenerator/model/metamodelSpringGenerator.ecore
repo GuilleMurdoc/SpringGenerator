@@ -52,14 +52,14 @@
         eOpposite="#//App/controllers"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endpoints" upperBound="-1"
         eType="#//Endpoint" containment="true" eOpposite="#//Endpoint/controller"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pathpart" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pathparts" upperBound="-1"
         eType="#//PathPart" containment="true" eOpposite="#//PathPart/controller"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Endpoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
         eType="#//Controller" eOpposite="#//Controller/endpoints"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pathpart" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pathparts" upperBound="-1"
         eType="#//PathPart" containment="true" eOpposite="#//PathPart/endpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputBody" eType="#//DTO"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputBody" eType="#//DTO"/>
@@ -72,9 +72,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableType" eType="#//PrimitiveType"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" eType="#//Controller"
-        eOpposite="#//Controller/pathpart"/>
+        eOpposite="#//Controller/pathparts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endpoint" eType="#//Endpoint"
-        eOpposite="#//Endpoint/pathpart"/>
+        eOpposite="#//Endpoint/pathparts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="HttpMethod">
     <eLiterals name="GET"/>

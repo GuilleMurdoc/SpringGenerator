@@ -32,7 +32,9 @@ lazy rule controllerClass2controller {
 		controllerClass : UML!Class (not controllerClass.getStereotype('Controller').oclIsUndefined())
 	to 
 		controller : SpringMetamodel!Controller (
-			name <- controllerClass.getValue(controllerClass.getStereotype('Controller'), 'path')->collect(p | p.name.concat(p.variable.toString()).concat(p.variableType)).toString()
+			name <- controllerClass.name,
+			pathparts <- controllerClass.getValue(controllerClass.getStereotype('Controller'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)),
+			endpoints <- controllerClass.getAllOperations()->collect(op | thisModule.operation2endpoint(op))
 		)
 }
 
@@ -45,6 +47,31 @@ lazy rule property2attribute {
 			attributetype <- if property.upper = -1
 				then thisModule.property2listAttributeType(property)
 				else thisModule.property2simpleAttributeType(property) endif
+		)
+}
+
+lazy rule operation2endpoint {
+	from
+		operation : UML!Operation
+	to 
+		entryEndpoint : SpringMetamodel!Endpoint (
+			name <- operation.name.concat(operation.ownedParameter->isEmpty().toString()),
+			pathparts <- operation.getValue(operation.getStereotype('Endpoint'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)), --TODO remove path on Controller and put all together in Endpoint
+			method <- operation.getValue(operation.getStereotype('Endpoint'), 'httpMethod').name,
+			inputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'in')->first() in
+				if not op.oclIsUndefined() then op.type else OclUndefined endif,
+			outputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'return')->first() in
+				if not op.oclIsUndefined() then op.type else OclUndefined endif
+		)
+}
+
+lazy rule pathPartMap2pathPart {
+	from
+		pathPartMap : UML!Element
+	to 
+		pathPart : SpringMetamodel!PathPart (
+			value <- pathPartMap.name,
+			variableType <- if pathPartMap.variable then pathPartMap.variableType.name else OclUndefined endif
 		)
 }
 

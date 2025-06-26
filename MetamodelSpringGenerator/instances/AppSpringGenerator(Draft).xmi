@@ -68,6 +68,23 @@
       </attributetype>
     </attributes>
   </dtos>
+  <dtos name="HealthDTO" package="">
+    <attributes name="title">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+    <attributes name="message">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+    <attributes name="status">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+  </dtos>
   <dtos name="ExpeditionBasicDTO" package="expedition">
     <attributes name="status">
       <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
@@ -86,12 +103,12 @@
     </attributes>
     <attributes name="parcels">
       <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
-        <type dto="//@dtos.5"/>
+        <type dto="//@dtos.6"/>
       </attributetype>
     </attributes>
     <attributes name="delivery">
       <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType" nullable="true">
-        <type dto="//@dtos.6"/>
+        <type dto="//@dtos.7"/>
       </attributetype>
     </attributes>
     <attributes name="id">
@@ -131,6 +148,11 @@
         <type primitiveType="Double"/>
       </attributetype>
     </attributes>
+    <attributes name="id">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="Integer"/>
+      </attributetype>
+    </attributes>
   </dtos>
   <dtos name="DeliveryDTO" package="expedition">
     <attributes name="dni">
@@ -144,5 +166,91 @@
       </attributetype>
     </attributes>
   </dtos>
-  <controllers name="Sequence {'publicfalseString'}"/>
+  <dtos name="IssueDTO" package="expedition">
+    <attributes name="description">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+    <attributes name="id">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="Integer"/>
+      </attributetype>
+    </attributes>
+  </dtos>
+  <dtos name="CreationIssueDTO" package="expedition">
+    <attributes name="description">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+  </dtos>
+  <dtos name="ExpeditionDTO" package="expedition">
+    <attributes name="issues">
+      <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
+        <type dto="//@dtos.8"/>
+      </attributetype>
+    </attributes>
+    <attributes name="status">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="String"/>
+      </attributetype>
+    </attributes>
+    <attributes name="deliveryAddress">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type dto="//@dtos.2"/>
+      </attributetype>
+    </attributes>
+    <attributes name="customer">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type dto="//@dtos.3"/>
+      </attributetype>
+    </attributes>
+    <attributes name="parcels">
+      <attributetype xsi:type="metamodelSpringGenerator:ListAttributeType">
+        <type dto="//@dtos.6"/>
+      </attributetype>
+    </attributes>
+    <attributes name="delivery">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType" nullable="true">
+        <type dto="//@dtos.7"/>
+      </attributetype>
+    </attributes>
+    <attributes name="id">
+      <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
+        <type primitiveType="Integer"/>
+      </attributetype>
+    </attributes>
+  </dtos>
+  <controllers name="Public">
+    <endpoints name="healthtrue" method="GET">
+      <pathparts value="health"/>
+    </endpoints>
+    <pathparts value="public"/>
+  </controllers>
+  <controllers name="Expedition">
+    <endpoints outputBody="//@dtos.5" name="getExpeditionsfalse" method="GET"/>
+    <endpoints outputBody="//@dtos.10" name="getExpeditionfalse" method="GET">
+      <pathparts value="expeditionId" variableType="Integer"/>
+    </endpoints>
+    <pathparts value="expeditions"/>
+  </controllers>
+  <controllers name="Parcel">
+    <endpoints outputBody="//@dtos.6" name="getParcelsfalse" method="GET"/>
+    <endpoints outputBody="//@dtos.6" name="getParcelfalse" method="GET">
+      <pathparts value="expeditionId" variableType="Integer"/>
+    </endpoints>
+    <pathparts value="expeditions"/>
+    <pathparts value="expeditionId" variableType="Integer"/>
+    <pathparts value="parcels"/>
+  </controllers>
+  <controllers name="Issues">
+    <endpoints outputBody="//@dtos.8" name="getIssuefalse" method="GET">
+      <pathparts value="issueId" variableType="Integer"/>
+    </endpoints>
+    <endpoints outputBody="//@dtos.8" inputBody="//@dtos.9" name="postIssuefalse" method="POST"/>
+    <pathparts value="expeditions"/>
+    <pathparts value="expeditionId" variableType="Integer"/>
+    <pathparts value="issues"/>
+  </controllers>
 </metamodelSpringGenerator:App>
