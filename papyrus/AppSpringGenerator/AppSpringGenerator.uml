@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_C-sYwFKqEfCt8vqU6fc2Zw/117" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_C-sYwFKqEfCt8vqU6fc2Zw/117 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_C-sYwVKqEfCt8vqU6fc2Zw">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_aA3FIFKwEfCt8vqU6fc2Zw/118" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_aA3FIFKwEfCt8vqU6fc2Zw/118 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_aA3FIVKwEfCt8vqU6fc2Zw">
   <uml:Model xmi:id="_rXDMQFDsEfCwvM-0nhwCCw" name="AppSpringGenerator">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_rYTwgFDsEfCwvM-0nhwCCw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -172,12 +172,6 @@
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_t0LYQFKoEfCt8vqU6fc2Zw" name="Parcel">
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_t0LYQVKoEfCt8vqU6fc2Zw" name="expeditions">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_t0LYQlKoEfCt8vqU6fc2Zw" type="_gi1w4FDuEfCwvM-0nhwCCw" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_t0LYQ1KoEfCt8vqU6fc2Zw" name="expedition">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_t0LYRFKoEfCt8vqU6fc2Zw" type="_gi1w4FDuEfCwvM-0nhwCCw" direction="return"/>
-          </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_3mx6wFKoEfCt8vqU6fc2Zw" name="getParcels">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_3mx6wVKoEfCt8vqU6fc2Zw" type="_-RL-MFDwEfCwvM-0nhwCCw" direction="return">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CxZZEFKpEfCt8vqU6fc2Zw"/>
@@ -189,21 +183,6 @@
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_JlMBEFKpEfCt8vqU6fc2Zw" name="Issues">
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_JlMBEVKpEfCt8vqU6fc2Zw" name="expeditions">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JlMBElKpEfCt8vqU6fc2Zw" type="_gi1w4FDuEfCwvM-0nhwCCw" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_JlMBE1KpEfCt8vqU6fc2Zw" name="expedition">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JlMBFFKpEfCt8vqU6fc2Zw" type="_gi1w4FDuEfCwvM-0nhwCCw" direction="return"/>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_JlMBFVKpEfCt8vqU6fc2Zw" name="parcels">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JlMBFlKpEfCt8vqU6fc2Zw" type="_-RL-MFDwEfCwvM-0nhwCCw" direction="return">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JlMBF1KpEfCt8vqU6fc2Zw"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JlMBGFKpEfCt8vqU6fc2Zw" value="*"/>
-            </ownedParameter>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_JlMBGVKpEfCt8vqU6fc2Zw" name="parcel">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JlMBGlKpEfCt8vqU6fc2Zw" type="_-RL-MFDwEfCwvM-0nhwCCw" direction="return"/>
-          </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_a7lPsFKqEfCt8vqU6fc2Zw" name="getIssue">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_a7lPsVKqEfCt8vqU6fc2Zw" type="_Rq2goFKpEfCt8vqU6fc2Zw" direction="return"/>
           </ownedOperation>
@@ -224,15 +203,15 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_mexbgFKpEfCt8vqU6fc2Zw" name="expedition" type="_ixQA4FKpEfCt8vqU6fc2Zw" association="_meaPIFKpEfCt8vqU6fc2Zw"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_rX2dgFDsEfCwvM-0nhwCCw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EdiVUFKqEfCt8vqU6fc2Zw" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EdiVUVKqEfCt8vqU6fc2Zw" key="Version" value="0.1.36"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EdiVUlKqEfCt8vqU6fc2Zw" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EdiVU1KqEfCt8vqU6fc2Zw" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EdiVVFKqEfCt8vqU6fc2Zw" key="Date" value="2025-06-26"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EdiVVVKqEfCt8vqU6fc2Zw" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6WaasFKxEfCt8vqU6fc2Zw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6WaasVKxEfCt8vqU6fc2Zw" key="Version" value="0.1.37"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6WaaslKxEfCt8vqU6fc2Zw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6Waas1KxEfCt8vqU6fc2Zw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6WaatFKxEfCt8vqU6fc2Zw" key="Date" value="2025-06-26"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6WaatVKxEfCt8vqU6fc2Zw" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rX45wFDsEfCwvM-0nhwCCw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_C-sYwVKqEfCt8vqU6fc2Zw"/>
+        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_aA3FIVKwEfCt8vqU6fc2Zw"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_fu-NMD7VEfCvDuOhuCRWWA"/>
     </profileApplication>
@@ -262,10 +241,6 @@
   <ProfileSpringGenerator:Endpoint xmi:id="_j_MQIFKoEfCt8vqU6fc2Zw" base_Operation="_ifc7sFKoEfCt8vqU6fc2Zw">
     <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_lv_fYFKoEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
   </ProfileSpringGenerator:Endpoint>
-  <ProfileSpringGenerator:Endpoint xmi:id="_t0MmclKoEfCt8vqU6fc2Zw" base_Operation="_t0LYQ1KoEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_t0NNcFKoEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
-  </ProfileSpringGenerator:Endpoint>
-  <ProfileSpringGenerator:Endpoint xmi:id="_t0NNcVKoEfCt8vqU6fc2Zw" base_Operation="_t0LYQVKoEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:Controller xmi:id="_t0N0gFKoEfCt8vqU6fc2Zw" base_Class="_t0LYQFKoEfCt8vqU6fc2Zw">
     <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_t0N0gVKoEfCt8vqU6fc2Zw" name="expeditions" variable="false"/>
     <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_zg64oFKoEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
@@ -274,14 +249,6 @@
   <ProfileSpringGenerator:Endpoint xmi:id="_3mzI4FKoEfCt8vqU6fc2Zw" base_Operation="_3mx6wFKoEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:Endpoint xmi:id="_71cTklKoEfCt8vqU6fc2Zw" base_Operation="_71aeYFKoEfCt8vqU6fc2Zw">
     <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_71c6oFKoEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
-  </ProfileSpringGenerator:Endpoint>
-  <ProfileSpringGenerator:Endpoint xmi:id="_JlN2UlKpEfCt8vqU6fc2Zw" base_Operation="_JlMBEVKpEfCt8vqU6fc2Zw"/>
-  <ProfileSpringGenerator:Endpoint xmi:id="_JlOdUFKpEfCt8vqU6fc2Zw" base_Operation="_JlMBE1KpEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlOdUVKpEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
-  </ProfileSpringGenerator:Endpoint>
-  <ProfileSpringGenerator:Endpoint xmi:id="_JlOdUlKpEfCt8vqU6fc2Zw" base_Operation="_JlMBFVKpEfCt8vqU6fc2Zw"/>
-  <ProfileSpringGenerator:Endpoint xmi:id="_JlOdU1KpEfCt8vqU6fc2Zw" base_Operation="_JlMBGVKpEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlOdVFKpEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
   </ProfileSpringGenerator:Endpoint>
   <ProfileSpringGenerator:Controller xmi:id="_JlOdVVKpEfCt8vqU6fc2Zw" base_Class="_JlMBEFKpEfCt8vqU6fc2Zw">
     <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYFKpEfCt8vqU6fc2Zw" name="expeditions" variable="false"/>
@@ -294,5 +261,5 @@
   <ProfileSpringGenerator:Endpoint xmi:id="_a7md0lKqEfCt8vqU6fc2Zw" base_Operation="_a7lPsFKqEfCt8vqU6fc2Zw">
     <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_a7nE4FKqEfCt8vqU6fc2Zw" name="issueId" variableType="Integer"/>
   </ProfileSpringGenerator:Endpoint>
-  <ProfileSpringGenerator:Endpoint xmi:id="_oHNjgFKqEfCt8vqU6fc2Zw" base_Operation="_oHLuUFKqEfCt8vqU6fc2Zw"/>
+  <ProfileSpringGenerator:Endpoint xmi:id="_oHNjgFKqEfCt8vqU6fc2Zw" base_Operation="_oHLuUFKqEfCt8vqU6fc2Zw" httpMethod="POST"/>
 </xmi:XMI>
