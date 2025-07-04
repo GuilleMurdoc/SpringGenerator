@@ -11,18 +11,30 @@ rule model2app {
 		app : SpringMetamodel!App (
 			name <- model.name,
 			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
-			dtos <- model.allClasses()
+			dtos <- model.allStereotypedClasses('DTO'),
+			controllers <- model.allStereotypedClasses('Controller')->collect(ctrClass | thisModule.controllerClass2controller(ctrClass))
 		)
 }
 
 rule dtoClass2dto {
 	from
-		dtoClass : UML!Class
+		dtoClass : UML!Class (not dtoClass.getStereotype('DTO').oclIsUndefined())
 	to 
 		dto : SpringMetamodel!DTO (
 			name <- dtoClass.name.concat('DTO'),
-			attributes <- dtoClass.attribute->collect(attr | thisModule.property2attribute(attr)),
+			attributes <- dtoClass.getAllAttributes()->collect(attr | thisModule.property2attribute(attr)),
 			package <- thisModule.getPackageString(thisModule.reverse(dtoClass.allPackages()->select(p | not p.isBase())))
+		)
+}
+
+lazy rule controllerClass2controller {
+	from
+		controllerClass : UML!Class (not controllerClass.getStereotype('Controller').oclIsUndefined())
+	to 
+		controller : SpringMetamodel!Controller (
+			name <- controllerClass.name,
+			pathparts <- controllerClass.getValue(controllerClass.getStereotype('Controller'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)),
+			endpoints <- controllerClass.getAllOperations()->collect(op | thisModule.operation2endpoint(op))
 		)
 }
 
@@ -35,6 +47,31 @@ lazy rule property2attribute {
 			attributetype <- if property.upper = -1
 				then thisModule.property2listAttributeType(property)
 				else thisModule.property2simpleAttributeType(property) endif
+		)
+}
+
+lazy rule operation2endpoint {
+	from
+		operation : UML!Operation
+	to 
+		entryEndpoint : SpringMetamodel!Endpoint (
+			name <- operation.name.concat(operation.ownedParameter->isEmpty().toString()),
+			pathparts <- operation.getValue(operation.getStereotype('Endpoint'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)), --TODO remove path on Controller and put all together in Endpoint
+			method <- operation.getValue(operation.getStereotype('Endpoint'), 'httpMethod').name,
+			inputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'in')->first() in
+				if not op.oclIsUndefined() then op.type else OclUndefined endif,
+			outputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'return')->first() in
+				if not op.oclIsUndefined() then op.type else OclUndefined endif
+		)
+}
+
+lazy rule pathPartMap2pathPart {
+	from
+		pathPartMap : UML!Element
+	to 
+		pathPart : SpringMetamodel!PathPart (
+			value <- pathPartMap.name,
+			variableType <- if pathPartMap.variable then pathPartMap.variableType.name else OclUndefined endif
 		)
 }
 
@@ -106,6 +143,9 @@ helper context UML!Package def: allPackages() : Sequence(UML!Package) =
 -- allPackages --
 -- allClasses --
 
+helper context UML!Model def : allStereotypedClasses(stereotypeName : String) : Sequence(UML!Class) =
+    self.allClasses()->select(class | not class.getStereotype(stereotypeName).oclIsUndefined());
+
 helper context UML!Model def : allClasses() : Sequence(UML!Class) =
     let directClasses : Sequence(UML!Class) = self.packagedElement->select(e | e.oclIsKindOf(UML!Class)) in
     let nestedClasses : Sequence(UML!Class) =
@@ -127,10 +167,16 @@ helper context UML!Package def : allClasses() : Sequence(UML!Class) =
 -- allClasses --
 
 helper context UML!Package def: isBase() : Boolean =
-	self.getValue(self.getStereotype('DtoPackage'), 'base');
+  let dtoPkg : UML!Stereotype = self.getStereotype('DtoPackage') in
+  let controllerPkg : UML!Stereotype = self.getStereotype('ControllerPackage') in
+    if not dtoPkg.oclIsUndefined() then self.getValue(dtoPkg, 'base')
+    else if not controllerPkg.oclIsUndefined() then self.getValue(controllerPkg, 'base')
+    else false
+    endif
+	endif;
 
 helper def : getBasePackage(elements : Sequence(OclAny)) : UML!Package =
-	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | p.isBase()) ->first();
+	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | p.isBase())->first();
 
 helper def : getPackageString(packages : Sequence(UML!Package)) : String =
 	packages->collect(p | p.name)->iterate(p; pString: String = '' |
