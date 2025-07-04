@@ -1,6 +1,7 @@
 [comment encoding = UTF-8 /]
 [module generate('http://metamodelSpringGenerator')]
 
+[import GenerationSpringGenerator::files::dtoHelper /]
 
 [template public generateElement(app : App)]
 [comment @main/]
@@ -19,99 +20,3 @@
 [/file]
 [/for]
 [/template]
-
-[template private writePackage(dto : DTO)]
-package [getPackageName(dto)/];
-[/template]
-
-[template private writeImports(dto : DTO)]
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-[if (needsNullableImport(dto))]
-import org.springframework.lang.Nullable
-[/if]
-[writeAttributesImports(dto)/]
-[/template]
-
-[template private writeAttributesImports(dto : DTO)]
-[for (dtoAttribute : Attribute | dto.attributes->select(att | not att.attributetype.type.dto.oclIsUndefined()) )]
-[let dto : DTO = dtoAttribute.attributetype.type.dto]
-import [getPackageName(dto)/].[dto.name/];
-[/let]
-[/for]
-[/template]
-
-[template private writeClassHeader(dto : DTO)]
-@Data
-@NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-[comment TODO extension/]
-public class [dto.name/] extends DTO {
-[/template]
-
-[template private writeClassAttributes(dto : DTO)]
-[for (attribute : Attribute | dto.attributes)]
-[if (attribute.attributetype.oclIsKindOf(SimpleAttributeType))]
-[if (attribute.attributetype.oclAsType(SimpleAttributeType).nullable)]	@Nullable[/if]
-[/if]
-	private [getAttributeType(attribute)/] [attribute.name/];
-
-[/for]
-[/template]
-
-[template private writeClassConstructor(dto : DTO)]
-	public [dto.name/]DTO(
-[for (attribute : Attribute | dto.attributes)]
-			[getAttributeType(attribute)/] [attribute.name/][if (attribute <> dto.attributes->last())],[/if][if (attribute = dto.attributes->last())]) {[/if]
-[/for]
-[for (attribute : Attribute | dto.attributes)]
-		this.[attribute.name/] = [attribute.name/];
-[/for]
-	}
-[/template]
-
-[template private writeEndFile(any : OclAny)]
-}
-[/template]
-
-[query private getAttributeType(attribute : Attribute) : String =
-	if attribute.attributetype.oclIsKindOf(ListAttributeType) then
-		let listType : ListAttributeType = attribute.attributetype.oclAsType(ListAttributeType) in
-			if not listType.type.dto.oclIsUndefined() then
-				'List<' + listType.type.dto.name + '>'
-			else if not listType.type.primitiveType.oclIsUndefined() then
-				'List<' + listType.type.primitiveType + '>'
-			else
-				'List<Object>'
-			endif
-			endif
-	else if attribute.attributetype.oclIsKindOf(SimpleAttributeType) then
-		let simpleType : SimpleAttributeType = attribute.attributetype.oclAsType(SimpleAttributeType) in
-			if not simpleType.type.dto.oclIsUndefined() then
-				simpleType.type.dto.name
-			else if not simpleType.type.primitiveType.oclIsUndefined() then
-				simpleType.type.primitiveType
-			else
-				'Object'
-			endif
-			endif
-	else
-		'Object'
-	endif
-	endif
-/]
-
-[query private needsNullableImport(dto : DTO) : Boolean =
-	dto.attributes->exists(att |
-		att.attributetype.oclIsKindOf(SimpleAttributeType) and
-		att.attributetype.oclAsType(SimpleAttributeType).nullable
-	)
-/]
-
-[query private getPackageName(dto : DTO) : String =
-  dto.app.basePackage + '.dtos' + 
-  (if (dto._package.size() <> 0) then '.' + dto._package else '' endif) 
-/]

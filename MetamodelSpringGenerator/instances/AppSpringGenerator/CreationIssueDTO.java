@@ -1,0 +1,22 @@
+package com.company.app.data.dtos.expedition;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@NoArgsConstructor
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class CreationIssueDTO extends DTO {
+
+
+	private String description;
+
+
+	public CreationIssueDTODTO(
+			String description) {
+		this.description = description;
+	}
+}
