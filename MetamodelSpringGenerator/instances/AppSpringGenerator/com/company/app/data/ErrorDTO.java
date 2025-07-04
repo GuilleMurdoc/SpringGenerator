@@ -1,4 +1,4 @@
-package com.company.app.data.dtos;
+package com.company.app.data;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class HealthDTO extends DTO {
+public class ErrorDTO extends DTO {
 
 
 	private String title;
@@ -18,15 +18,10 @@ public class HealthDTO extends DTO {
 	private String message;
 
 
-	private String status;
-
-
-	public HealthDTODTO(
+	public ErrorDTODTO(
 			String title,
-			String message,
-			String status) {
+			String message) {
 		this.title = title;
 		this.message = message;
-		this.status = status;
 	}
 }

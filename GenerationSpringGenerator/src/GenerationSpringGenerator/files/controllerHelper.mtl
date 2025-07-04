@@ -1,42 +1,44 @@
 [comment encoding = UTF-8 /]
-[module dtoHelper('http://metamodelSpringGenerator')]
+[module controllerHelper('http://metamodelSpringGenerator')]
 
 [import GenerationSpringGenerator::files::genericHelper /]
 
-[template public writeDtoPackage(dto : DTO)]
-[comment TODO: Change app.basePackage for dtoBasePath /]
-package [getPackageName(dto.app.basePackage, dto._package)/];
+[template public writeControllerPackage(controller : Controller)]
+[comment TODO: Change app.basePackage for controllerBasePath /]
+package [getPackageName(controller.app.basePackage, '')/];
 [/template]
 
-[template public writeDtoImports(dto : DTO)]
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-[if (needsNullableImport(dto))]
-import org.springframework.lang.Nullable
-[/if]
-[writeDtoAttributesImports(dto)/]
+[template public writeControllerImports(controller : Controller)]
+import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+[writeControllerAttributesImports(controller)/]
+[writeControllerOwnImports(controller)/]
 [/template]
 
-[template private writeDtoAttributesImports(dto : DTO)]
-[for (dtoAttribute : Attribute | dto.attributes->select(att | not att.attributetype.type.dto.oclIsUndefined()) )]
-[let dto : DTO = dtoAttribute.attributetype.type.dto]
+[template private writeControllerAttributesImports(controller : Controller)]
+[let dtos : Set(DTO) = 
+    controller.endpoints->collect(e | Sequence{e.inputBody, e.outputBody})
+    ->flatten()
+    ->excluding(null)
+    ->asSet()]
+[for (dto : DTO | dtos)]
 import [getPackageName(dto.app.basePackage, dto._package)/].[dto.name/];
-[/let]
-[/for]
+[/for][/let]
 [/template]
 
-[template public writeDtoClassHeader(dto : DTO)]
-@Data
-@NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-[comment TODO extension/]
-public class [dto.name/] extends DTO {
+[template private writeControllerOwnImports(controller : Controller)]
+// Write your own imports
+[createProtectedZone('Controller Custom Imports')/]
 [/template]
 
-[template public writeDtoClassAttributes(dto : DTO)]
+[template public writeControllerClassHeader(controller : Controller)]
+@RestController
+[if (controller.pathparts->notEmpty())]@RequestMapping(value = "[getPathUrl(controller.pathparts)/]")[/if]
+@RequiredArgsConstructor
+public class [controller.name/] {
+[/template]
+
+[template public writeClassAttributes(dto : DTO)]
 [for (attribute : Attribute | dto.attributes)]
 [if (attribute.attributetype.oclIsKindOf(SimpleAttributeType))]
 [if (attribute.attributetype.oclAsType(SimpleAttributeType).nullable)]	@Nullable[/if]
@@ -46,7 +48,7 @@ public class [dto.name/] extends DTO {
 [/for]
 [/template]
 
-[template public writeDtoClassConstructor(dto : DTO)]
+[template public writeClassConstructor(dto : DTO)]
 	public [dto.name/]DTO(
 [for (attribute : Attribute | dto.attributes)]
 			[getAttributeType(attribute)/] [attribute.name/][if (attribute <> dto.attributes->last())],[/if][if (attribute = dto.attributes->last())]) {[/if]
@@ -89,4 +91,13 @@ public class [dto.name/] extends DTO {
 		att.attributetype.oclIsKindOf(SimpleAttributeType) and
 		att.attributetype.oclAsType(SimpleAttributeType).nullable
 	)
+/]
+
+
+
+
+
+[query private getPathUrl(pathParts : OrderedSet(PathPart)) : String =
+	pathParts->iterate(part; acc : String = '' |
+    acc + '/' + (if part.variableType.oclIsUndefined() then part.value else '{' + part.value + '}' endif))
 /]

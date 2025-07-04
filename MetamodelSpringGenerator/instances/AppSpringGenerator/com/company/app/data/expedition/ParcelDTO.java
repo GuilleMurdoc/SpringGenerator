@@ -1,4 +1,4 @@
-package com.company.app.data.dtos.expedition;
+package com.company.app.data.expedition;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[module genericHelper('http://metamodelSpringGenerator')]
+
+[template public writeEndFile(any : OclAny)]
+}
+[/template]
+
+[query public getPackageName(basePackageName : String, specificPackageName : String) : String =
+  basePackageName + (if (specificPackageName.size() <> 0) then ('.' + specificPackageName) else '' endif)
+/]
+
+[query public getFileFullName(appName : String, basePackageName : String, specificPackageName : String, fileName : String) : String =
+	let basePath : String = basePackageName.replaceAll('\\.', '/'),
+	    specificPath : String = if specificPackageName.oclIsUndefined() or specificPackageName.size() = 0 then '' else '/' + specificPackageName.replaceAll('\\.', '/') endif
+	in
+	appName + '/' + basePath + specificPath + '/' + fileName + '.java'
+/]
+
+
+[template public createProtectedZone(name : String)]
+[getProtectedZoneAdvice(true)/]
+// [protected (name)]
+
+// Write your own code here. This line can be deleted.
+
+// [/protected]
+[getProtectedZoneAdvice(false)/]
+[/template]
+
+[query private getProtectedZoneAdvice(isInit : Boolean) : String =
+	if isInit then '// START PROTECTED ZONE. This space is free to write your own code.'
+	else '// END PROTECTED ZONE.'
+	endif
+/]

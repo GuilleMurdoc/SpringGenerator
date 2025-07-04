@@ -2,19 +2,40 @@
 [module generate('http://metamodelSpringGenerator')]
 
 [import GenerationSpringGenerator::files::dtoHelper /]
+[import GenerationSpringGenerator::files::controllerHelper /]
+[import GenerationSpringGenerator::files::genericHelper /]
 
-[template public generateElement(app : App)]
+[template public generateApp(app : App)]
 [comment @main/]
 [for (dto : DTO | app.dtos)]
-[file (app.name.concat('/').concat(dto.name.concat('.java')), false, 'UTF-8')]
-[writePackage(dto)/]
+[comment TODO: Change app.basePackage for dtoBasePath /]
+[file (getFileFullName(app.name, app.basePackage, dto._package, dto.name), false, 'UTF-8')]
+[writeDtoPackage(dto)/]
 
-[writeImports(dto)/]
-[writeClassHeader(dto)/]
+[writeDtoImports(dto)/]
+[writeDtoClassHeader(dto)/]
 
 [if (dto.attributes->notEmpty())]
-[writeClassAttributes(dto)/]
-[writeClassConstructor(dto)/]
+[writeDtoClassAttributes(dto)/]
+[writeDtoClassConstructor(dto)/]
+[/if]
+[writeEndFile()/]
+[/file]
+[/for]
+
+
+
+[for (controller : Controller | app.controllers)]
+[comment TODO: Change app.basePackage for controllerBasePath /]
+[file (getFileFullName(app.name, app.basePackage, '', controller.name), false, 'UTF-8')]
+[writeControllerPackage(controller)/]
+
+[writeControllerImports(controller)/]
+
+[writeControllerClassHeader(controller)/]
+
+[if (controller.endpoints->notEmpty())]
+[comment TODO: Create endpoints /]
 [/if]
 [writeEndFile()/]
 [/file]

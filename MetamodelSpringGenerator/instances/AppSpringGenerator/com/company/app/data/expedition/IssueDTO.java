@@ -1,4 +1,4 @@
-package com.company.app.data.dtos.expedition;
+package com.company.app.data.expedition;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,14 +9,19 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class CreationIssueDTO extends DTO {
+public class IssueDTO extends DTO {
 
 
 	private String description;
 
 
-	public CreationIssueDTODTO(
-			String description) {
+	private Integer id;
+
+
+	public IssueDTODTO(
+			String description,
+			Integer id) {
 		this.description = description;
+		this.id = id;
 	}
 }
