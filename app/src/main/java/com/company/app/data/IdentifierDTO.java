@@ -7,9 +7,7 @@ import lombok.ToString;
 
 @Data
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class IdentifierDTO extends DTO {
+public class IdentifierDTO {
 
 
 	private Integer id;

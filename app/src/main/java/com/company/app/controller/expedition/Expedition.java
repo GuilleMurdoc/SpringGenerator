@@ -1,4 +1,4 @@
-package com.company.app.controller;
+package com.company.app.controller.expedition;
 
 import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
@@ -38,22 +38,24 @@ public class Expedition {
 		// Start of user code Controller method getExpeditions implementation
 		
 		// Write your own code here. This line can be deleted.
+		return null;
 		
 		// End of user code
 		// END PROTECTED ZONE.
 	}
 
-		@GetMapping(value = "/{expeditionId}") 
-		public ExpeditionDTO getExpedition(
-			@PathVariable(name = "expeditionId") Integer expeditionId
-		) {
-			// START PROTECTED ZONE. This space is free to write your own code.
-			// Start of user code Controller method getExpedition implementation
-			
-			// Write your own code here. This line can be deleted.
-			
-			// End of user code
-			// END PROTECTED ZONE.
-		}
+	@GetMapping(value = "/{expeditionId}") 
+	public ExpeditionDTO getExpedition(
+		@PathVariable(name = "expeditionId") Integer expeditionId
+	) {
+		// START PROTECTED ZONE. This space is free to write your own code.
+		// Start of user code Controller method getExpedition implementation
+		
+		// Write your own code here. This line can be deleted.
+		return null;
+		
+		// End of user code
+		// END PROTECTED ZONE.
+	}
 
 }

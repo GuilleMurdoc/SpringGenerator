@@ -7,9 +7,7 @@ import lombok.ToString;
 
 @Data
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class ParcelDTO extends DTO {
+public class ParcelDTO {
 
 
 	private String status;

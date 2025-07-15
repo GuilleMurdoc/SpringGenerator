@@ -8,7 +8,6 @@
 [template public generateApp(app : App)]
 [comment @main/]
 [for (dto : DTO | app.dtos)]
-[comment TODO: Change app.basePackage for dtoBasePath /]
 [file (getFileFullName(app.name, app.baseDtoPackage, dto._package, dto.name), false, 'UTF-8')]
 [writeDtoPackage(dto)/]
 

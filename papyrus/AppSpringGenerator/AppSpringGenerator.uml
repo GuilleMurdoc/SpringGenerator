@@ -248,7 +248,7 @@
   </ProfileSpringGenerator:Controller>
   <ProfileSpringGenerator:Endpoint xmi:id="_3mzI4FKoEfCt8vqU6fc2Zw" base_Operation="_3mx6wFKoEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:Endpoint xmi:id="_71cTklKoEfCt8vqU6fc2Zw" base_Operation="_71aeYFKoEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_71c6oFKoEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_71c6oFKoEfCt8vqU6fc2Zw" name="parccelId" variableType="Integer"/>
   </ProfileSpringGenerator:Endpoint>
   <ProfileSpringGenerator:Controller xmi:id="_JlOdVVKpEfCt8vqU6fc2Zw" base_Class="_JlMBEFKpEfCt8vqU6fc2Zw">
     <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYFKpEfCt8vqU6fc2Zw" name="expeditions" variable="false"/>

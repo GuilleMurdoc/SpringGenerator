@@ -7,9 +7,7 @@ import lombok.ToString;
 
 @Data
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class CreationIssueDTO extends DTO {
+public class CreationIssueDTO {
 
 
 	private String description;

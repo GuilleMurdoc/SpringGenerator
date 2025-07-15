@@ -7,9 +7,7 @@ import lombok.ToString;
 
 @Data
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class ErrorDTO extends DTO {
+public class HealthDTO {
 
 
 	private String title;
@@ -18,10 +16,15 @@ public class ErrorDTO extends DTO {
 	private String message;
 
 
-	public ErrorDTO(
+	private String status;
+
+
+	public HealthDTO(
 			String title,
-			String message) {
+			String message,
+			String status) {
 		this.title = title;
 		this.message = message;
+		this.status = status;
 	}
 }

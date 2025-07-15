@@ -4,7 +4,7 @@
 [import GenerationSpringGenerator::files::genericHelper /]
 
 [template public writeControllerPackage(controller : Controller)]
-package [getPackageName(controller.app.baseControllerPackage, '')/];
+package [getPackageName(controller.app.baseControllerPackage, controller._package)/];
 [/template]
 
 [template public writeControllerImports(controller : Controller)]

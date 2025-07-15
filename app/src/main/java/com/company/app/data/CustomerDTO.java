@@ -9,9 +9,7 @@ import com.company.app.data.AddressesDTO;
 
 @Data
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class CustomerDTO extends DTO {
+public class CustomerDTO {
 
 
 	private String dni;

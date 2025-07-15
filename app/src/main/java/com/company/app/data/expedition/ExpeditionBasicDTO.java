@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.lang.Nullable
+import org.springframework.lang.Nullable;
 import java.util.List;
 import com.company.app.data.AddressesDTO;
 import com.company.app.data.CustomerDTO;
@@ -13,9 +13,7 @@ import com.company.app.data.expedition.DeliveryDTO;
 
 @Data
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class ExpeditionBasicDTO extends DTO {
+public class ExpeditionBasicDTO {
 
 
 	private String status;
