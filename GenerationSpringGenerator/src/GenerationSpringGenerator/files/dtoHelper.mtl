@@ -13,7 +13,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 [if (needsNullableImport(dto))]
-import org.springframework.lang.Nullable
+import org.springframework.lang.Nullable;
 [/if]
 [if (dto.attributes->select(a : Attribute | a.attributetype.oclIsKindOf(ListAttributeType))->notEmpty())]
 import java.util.List;
