@@ -10,7 +10,8 @@ rule model2app {
 	to 
 		app : SpringMetamodel!App (
 			name <- model.name,
-			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
+			baseDtoPackage <- thisModule.getBasePackage(model.packagedElement, 'DtoPackage').name,
+			baseControllerPackage <- thisModule.getBasePackage(model.packagedElement, 'ControllerPackage').name,
 			dtos <- model.allStereotypedClasses('DTO'),
 			controllers <- model.allStereotypedClasses('Controller')->collect(ctrClass | thisModule.controllerClass2controller(ctrClass))
 		)
@@ -34,7 +35,8 @@ lazy rule controllerClass2controller {
 		controller : SpringMetamodel!Controller (
 			name <- controllerClass.name,
 			pathparts <- controllerClass.getValue(controllerClass.getStereotype('Controller'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)),
-			endpoints <- controllerClass.getAllOperations()->collect(op | thisModule.operation2endpoint(op))
+			endpoints <- controllerClass.getAllOperations()->collect(op | thisModule.operation2endpoint(op)),
+			package <- thisModule.getPackageString(thisModule.reverse(controllerClass.allPackages()->select(p | not p.isBase())))
 		)
 }
 
@@ -55,13 +57,16 @@ lazy rule operation2endpoint {
 		operation : UML!Operation
 	to 
 		entryEndpoint : SpringMetamodel!Endpoint (
-			name <- operation.name.concat(operation.ownedParameter->isEmpty().toString()),
+			name <- operation.name,
 			pathparts <- operation.getValue(operation.getStereotype('Endpoint'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)), --TODO remove path on Controller and put all together in Endpoint
 			method <- operation.getValue(operation.getStereotype('Endpoint'), 'httpMethod').name,
 			inputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'in')->first() in
 				if not op.oclIsUndefined() then op.type else OclUndefined endif,
 			outputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'return')->first() in
-				if not op.oclIsUndefined() then op.type else OclUndefined endif
+				if not op.oclIsUndefined() then op.type else OclUndefined endif,
+			outputIsList <- let retParam : UML!Parameter = operation.ownedParameter->select(p | p.direction.toString() = 'return')->first() in
+				if not retParam.oclIsUndefined() then retParam.upper = -1 else false
+     endif
 		)
 }
 
@@ -175,8 +180,8 @@ helper context UML!Package def: isBase() : Boolean =
     endif
 	endif;
 
-helper def : getBasePackage(elements : Sequence(OclAny)) : UML!Package =
-	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | p.isBase())->first();
+helper def : getBasePackage(elements : Sequence(OclAny), steretypeName : String) : UML!Package =
+	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | not p.getStereotype(steretypeName).oclIsUndefined())->select(p | p.isBase())->first();
 
 helper def : getPackageString(packages : Sequence(UML!Package)) : String =
 	packages->collect(p | p.name)->iterate(p; pString: String = '' |

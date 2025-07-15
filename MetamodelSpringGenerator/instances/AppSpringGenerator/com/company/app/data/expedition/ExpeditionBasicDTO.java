@@ -1,14 +1,15 @@
-package com.company.app.data.dtos.expedition;
+package com.company.app.data.expedition;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.lang.Nullable
-import com.company.app.data.dtos.AddressesDTO;
-import com.company.app.data.dtos.CustomerDTO;
-import com.company.app.data.dtos.expedition.ParcelDTO;
-import com.company.app.data.dtos.expedition.DeliveryDTO;
+import java.util.List;
+import com.company.app.data.AddressesDTO;
+import com.company.app.data.CustomerDTO;
+import com.company.app.data.expedition.ParcelDTO;
+import com.company.app.data.expedition.DeliveryDTO;
 
 @Data
 @NoArgsConstructor
@@ -34,7 +35,7 @@ public class ExpeditionBasicDTO extends DTO {
 	private Integer id;
 
 
-	public ExpeditionBasicDTODTO(
+	public ExpeditionBasicDTO(
 			String status,
 			AddressesDTO deliveryAddress,
 			CustomerDTO customer,

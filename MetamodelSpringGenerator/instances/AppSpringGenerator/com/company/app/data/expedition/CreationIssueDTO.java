@@ -1,4 +1,4 @@
-package com.company.app.data.dtos.expedition;
+package com.company.app.data.expedition;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +15,7 @@ public class CreationIssueDTO extends DTO {
 	private String description;
 
 
-	public CreationIssueDTODTO(
+	public CreationIssueDTO(
 			String description) {
 		this.description = description;
 	}

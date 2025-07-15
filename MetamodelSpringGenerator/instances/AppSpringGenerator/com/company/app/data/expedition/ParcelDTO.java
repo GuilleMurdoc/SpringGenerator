@@ -1,4 +1,4 @@
-package com.company.app.data.dtos.expedition;
+package com.company.app.data.expedition;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -33,7 +33,7 @@ public class ParcelDTO extends DTO {
 	private Integer id;
 
 
-	public ParcelDTODTO(
+	public ParcelDTO(
 			String status,
 			Double height,
 			Double width,

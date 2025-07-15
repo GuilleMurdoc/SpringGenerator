@@ -1,12 +1,13 @@
 [comment encoding = UTF-8 /]
 [module dtoHelper('http://metamodelSpringGenerator')]
 
+[import GenerationSpringGenerator::files::genericHelper /]
 
-[template public writePackage(dto : DTO)]
-package [getPackageName(dto)/];
+[template public writeDtoPackage(dto : DTO)]
+package [getPackageName(dto.app.baseDtoPackage, dto._package)/];
 [/template]
 
-[template public writeImports(dto : DTO)]
+[template public writeDtoImports(dto : DTO)]
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -14,18 +15,21 @@ import lombok.ToString;
 [if (needsNullableImport(dto))]
 import org.springframework.lang.Nullable
 [/if]
-[writeAttributesImports(dto)/]
+[if (dto.attributes->select(a : Attribute | a.attributetype.oclIsKindOf(ListAttributeType))->notEmpty())]
+import java.util.List;
+[/if]
+[writeDtoAttributesImports(dto)/]
 [/template]
 
-[template private writeAttributesImports(dto : DTO)]
+[template private writeDtoAttributesImports(dto : DTO)]
 [for (dtoAttribute : Attribute | dto.attributes->select(att | not att.attributetype.type.dto.oclIsUndefined()) )]
 [let dto : DTO = dtoAttribute.attributetype.type.dto]
-import [getPackageName(dto)/].[dto.name/];
+import [getPackageName(dto.app.baseDtoPackage, dto._package)/].[dto.name/];
 [/let]
 [/for]
 [/template]
 
-[template public writeClassHeader(dto : DTO)]
+[template public writeDtoClassHeader(dto : DTO)]
 @Data
 @NoArgsConstructor
 @ToString(callSuper = true)
@@ -34,7 +38,7 @@ import [getPackageName(dto)/].[dto.name/];
 public class [dto.name/] extends DTO {
 [/template]
 
-[template public writeClassAttributes(dto : DTO)]
+[template public writeDtoClassAttributes(dto : DTO)]
 [for (attribute : Attribute | dto.attributes)]
 [if (attribute.attributetype.oclIsKindOf(SimpleAttributeType))]
 [if (attribute.attributetype.oclAsType(SimpleAttributeType).nullable)]	@Nullable[/if]
@@ -44,8 +48,8 @@ public class [dto.name/] extends DTO {
 [/for]
 [/template]
 
-[template public writeClassConstructor(dto : DTO)]
-	public [dto.name/]DTO(
+[template public writeDtoClassConstructor(dto : DTO)]
+	public [dto.name/](
 [for (attribute : Attribute | dto.attributes)]
 			[getAttributeType(attribute)/] [attribute.name/][if (attribute <> dto.attributes->last())],[/if][if (attribute = dto.attributes->last())]) {[/if]
 [/for]
@@ -53,10 +57,6 @@ public class [dto.name/] extends DTO {
 		this.[attribute.name/] = [attribute.name/];
 [/for]
 	}
-[/template]
-
-[template public writeEndFile(any : OclAny)]
-}
 [/template]
 
 [query private getAttributeType(attribute : Attribute) : String =
@@ -91,9 +91,4 @@ public class [dto.name/] extends DTO {
 		att.attributetype.oclIsKindOf(SimpleAttributeType) and
 		att.attributetype.oclAsType(SimpleAttributeType).nullable
 	)
-/]
-
-[query private getPackageName(dto : DTO) : String =
-  dto.app.basePackage + '.dtos' + 
-  (if (dto._package.size() <> 0) then '.' + dto._package else '' endif) 
 /]

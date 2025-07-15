@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<metamodelSpringGenerator:App xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" name="AppSpringGenerator" basePackage="com.company.app.data">
+<metamodelSpringGenerator:App xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" name="AppSpringGenerator" baseDtoPackage="com.company.app.data" baseControllerPackage="com.company.app.controller">
   <dtos name="ErrorDTO" package="">
     <attributes name="title">
       <attributetype xsi:type="metamodelSpringGenerator:SimpleAttributeType">
@@ -222,33 +222,33 @@
       </attributetype>
     </attributes>
   </dtos>
-  <controllers name="Public">
-    <endpoints name="healthtrue" method="GET">
+  <controllers name="Public" package="">
+    <endpoints name="health" method="GET">
       <pathparts value="health"/>
     </endpoints>
     <pathparts value="public"/>
   </controllers>
-  <controllers name="Expedition">
-    <endpoints outputBody="//@dtos.5" name="getExpeditionsfalse" method="GET"/>
-    <endpoints outputBody="//@dtos.10" name="getExpeditionfalse" method="GET">
+  <controllers name="Expedition" package="expedition">
+    <endpoints outputBody="//@dtos.5" name="getExpeditions" method="GET" outputIsList="true"/>
+    <endpoints outputBody="//@dtos.10" name="getExpedition" method="GET">
       <pathparts value="expeditionId" variableType="Integer"/>
     </endpoints>
     <pathparts value="expeditions"/>
   </controllers>
-  <controllers name="Parcel">
-    <endpoints outputBody="//@dtos.6" name="getParcelsfalse" method="GET"/>
-    <endpoints outputBody="//@dtos.6" name="getParcelfalse" method="GET">
+  <controllers name="Parcel" package="expedition">
+    <endpoints outputBody="//@dtos.6" name="getParcels" method="GET" outputIsList="true"/>
+    <endpoints outputBody="//@dtos.6" name="getParcel" method="GET">
       <pathparts value="expeditionId" variableType="Integer"/>
     </endpoints>
     <pathparts value="expeditions"/>
     <pathparts value="expeditionId" variableType="Integer"/>
     <pathparts value="parcels"/>
   </controllers>
-  <controllers name="Issues">
-    <endpoints outputBody="//@dtos.8" name="getIssuefalse" method="GET">
+  <controllers name="Issues" package="expedition">
+    <endpoints outputBody="//@dtos.8" name="getIssue" method="GET">
       <pathparts value="issueId" variableType="Integer"/>
     </endpoints>
-    <endpoints outputBody="//@dtos.8" inputBody="//@dtos.9" name="postIssuefalse" method="POST"/>
+    <endpoints outputBody="//@dtos.8" inputBody="//@dtos.9" name="postIssue" method="POST"/>
     <pathparts value="expeditions"/>
     <pathparts value="expeditionId" variableType="Integer"/>
     <pathparts value="issues"/>

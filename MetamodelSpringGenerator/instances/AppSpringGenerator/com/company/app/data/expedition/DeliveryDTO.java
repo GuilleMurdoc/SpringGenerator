@@ -1,16 +1,15 @@
-package com.company.app.data.dtos;
+package com.company.app.data.expedition;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import com.company.app.data.dtos.AddressesDTO;
 
 @Data
 @NoArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class CustomerDTO extends DTO {
+public class DeliveryDTO extends DTO {
 
 
 	private String dni;
@@ -18,15 +17,11 @@ public class CustomerDTO extends DTO {
 
 	private String name;
 
-	private List<AddressesDTO> addresses;
 
-
-	public CustomerDTODTO(
+	public DeliveryDTO(
 			String dni,
-			String name,
-			List<AddressesDTO> addresses) {
+			String name) {
 		this.dni = dni;
 		this.name = name;
-		this.addresses = addresses;
 	}
 }

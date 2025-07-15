@@ -1,4 +1,4 @@
-package com.company.app.data.dtos;
+package com.company.app.data;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -31,7 +31,7 @@ public class AddressesDTO extends DTO {
 	private String country;
 
 
-	public AddressesDTODTO(
+	public AddressesDTO(
 			String city,
 			String postalCode,
 			String street,

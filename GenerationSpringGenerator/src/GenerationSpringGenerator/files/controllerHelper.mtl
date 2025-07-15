@@ -1,0 +1,96 @@
+[comment encoding = UTF-8 /]
+[module controllerHelper('http://metamodelSpringGenerator')]
+
+[import GenerationSpringGenerator::files::genericHelper /]
+
+[template public writeControllerPackage(controller : Controller)]
+package [getPackageName(controller.app.baseControllerPackage, '')/];
+[/template]
+
+[template public writeControllerImports(controller : Controller)]
+import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+[writeControllerAttributesImports(controller)/]
+[writeControllerOwnImports(controller)/]
+[/template]
+
+[template private writeControllerAttributesImports(controller : Controller)]
+[let dtos : Set(DTO) = 
+    controller.endpoints->collect(e | Sequence{e.inputBody, e.outputBody})
+    ->flatten()
+    ->excluding(null)
+    ->asSet()]
+[for (dto : DTO | dtos)]
+import [getPackageName(dto.app.baseDtoPackage, dto._package)/].[dto.name/];
+[/for][/let]
+[if (controller.endpoints->select(e : Endpoint | e.outputIsList)->notEmpty())]
+import java.util.List;
+[/if]
+[/template]
+
+[template private writeControllerOwnImports(controller : Controller)]
+// Write your own imports
+[createProtectedZone('Controller Custom Imports')/]
+[/template]
+
+[template public writeControllerClassHeader(controller : Controller)]
+@RestController
+[if (controller.pathparts->notEmpty())]@RequestMapping(value = "[getPathUrl(controller.pathparts)/]")[/if]
+@RequiredArgsConstructor
+public class [controller.name/] {
+[/template]
+
+[template public writeControllerMethods(controller : Controller)]
+[for (endpoint : Endpoint | controller.endpoints)]
+[writeControllerMethod(endpoint)/]
+[/for]
+[/template]
+
+[template private writeControllerMethod(endpoint : Endpoint)]
+
+	@GetMapping([if (endpoint.pathparts->notEmpty())]value = "[getPathUrl(endpoint.pathparts)/]"[/if]) 
+	public [getReturnType(endpoint)/] [endpoint.name/]([if (not hasMethodParameters(endpoint))]) {[/if]
+[if (hasMethodParameters(endpoint))][writeControllerMethodAttributes(endpoint)/]	) {[/if]
+		[createProtectedZone('Controller method ' + endpoint.name + ' implementation')/]
+	}
+[/template]
+
+[template private writeControllerMethodAttributes(endpoint : Endpoint)]
+[let pathVariables : Set(PathPart) = (endpoint.controller.pathparts->union(endpoint.pathparts)->select(pp : PathPart | not pp.variableType.oclIsUndefined()))]
+[for (pathPart : PathPart | pathVariables)]
+		@PathVariable(name = "[pathPart.value/]") [pathPart.variableType/] [pathPart.value/][if ((not (pathVariables->asOrderedSet()->last() = pathPart)) or not endpoint.inputBody.oclIsUndefined())],[/if]
+[/for]
+[/let]
+[if (not endpoint.inputBody.oclIsUndefined())]
+		@RequestBody [endpoint.inputBody.name/] inputBody
+[/if]
+[/template]
+
+
+[query private getPathUrl(pathParts : OrderedSet(PathPart)) : String =
+	pathParts->iterate(part; acc : String = '' |
+    acc + '/' + (if part.variableType.oclIsUndefined() then part.value else '{' + part.value + '}' endif))
+/]
+
+[query public hasMethodParameters(endpoint: Endpoint) : Boolean =
+    let pathVariables : Set(PathPart) = (endpoint.controller.pathparts->union(endpoint.pathparts)) in
+		if pathVariables->select(pp : PathPart | not pp.variableType.oclIsUndefined())->notEmpty() then
+			true
+		else if not endpoint.inputBody.oclIsUndefined() then
+			true
+		else
+			false
+		endif endif
+/]
+
+[query public getReturnType(endpoint : Endpoint) : String =
+    if endpoint.outputBody.oclIsUndefined() then
+        'void'
+    else
+        if endpoint.outputIsList then
+            'List<' + endpoint.outputBody.name + '>'
+        else
+            endpoint.outputBody.name
+        endif
+    endif
+/]

@@ -1,4 +1,4 @@
-package com.company.app.data.dtos;
+package com.company.app.data;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +15,7 @@ public class IdentifierDTO extends DTO {
 	private Integer id;
 
 
-	public IdentifierDTODTO(
+	public IdentifierDTO(
 			Integer id) {
 		this.id = id;
 	}

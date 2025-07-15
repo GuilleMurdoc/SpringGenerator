@@ -1,4 +1,4 @@
-package com.company.app.data.dtos;
+package com.company.app.data;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,7 +21,7 @@ public class HealthDTO extends DTO {
 	private String status;
 
 
-	public HealthDTODTO(
+	public HealthDTO(
 			String title,
 			String message,
 			String status) {

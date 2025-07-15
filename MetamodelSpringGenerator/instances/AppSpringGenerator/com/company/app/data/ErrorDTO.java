@@ -1,4 +1,4 @@
-package com.company.app.data.dtos;
+package com.company.app.data;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +18,7 @@ public class ErrorDTO extends DTO {
 	private String message;
 
 
-	public ErrorDTODTO(
+	public ErrorDTO(
 			String title,
 			String message) {
 		this.title = title;
