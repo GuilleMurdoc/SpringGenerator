@@ -34,8 +34,12 @@
 
 [writeControllerClassHeader(controller)/]
 
+	// Write your own attributes. To be injected, it must be written as final attributes
+	// ex: private final ExampleService exampleService;
+	[createProtectedZone('Controller Attributes')/]
+
 [if (controller.endpoints->notEmpty())]
-[comment TODO: Create endpoints /]
+[writeControllerMethods(controller)/]
 [/if]
 [writeEndFile()/]
 [/file]

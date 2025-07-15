@@ -18,4 +18,42 @@ import com.company.app.data.expedition.ParcelDTO;
 @RequiredArgsConstructor
 public class Parcel {
 
+	// Write your own attributes. To be injected, it must be written as final attributes
+	// ex: private final ExampleService exampleService;
+	// START PROTECTED ZONE. This space is free to write your own code.
+	// Start of user code Controller Attributes
+	
+	// Write your own code here. This line can be deleted.
+	
+	// End of user code
+	// END PROTECTED ZONE.
+
+
+	@GetMapping() 
+	public ParcelDTO getParcels(
+		@PathVariable(name = "expeditionId") Integer expeditionId
+	) {
+		// START PROTECTED ZONE. This space is free to write your own code.
+		// Start of user code Controller method getParcels implementation
+		
+		// Write your own code here. This line can be deleted.
+		
+		// End of user code
+		// END PROTECTED ZONE.
+	}
+
+		@GetMapping(value = "/{expeditionId}") 
+		public ParcelDTO getParcel(
+			@PathVariable(name = "expeditionId") Integer expeditionId,
+			@PathVariable(name = "expeditionId") Integer expeditionId
+		) {
+			// START PROTECTED ZONE. This space is free to write your own code.
+			// Start of user code Controller method getParcel implementation
+			
+			// Write your own code here. This line can be deleted.
+			
+			// End of user code
+			// END PROTECTED ZONE.
+		}
+
 }

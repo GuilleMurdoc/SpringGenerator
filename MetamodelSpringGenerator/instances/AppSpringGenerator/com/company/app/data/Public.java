@@ -17,4 +17,27 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Public {
 
+	// Write your own attributes. To be injected, it must be written as final attributes
+	// ex: private final ExampleService exampleService;
+	// START PROTECTED ZONE. This space is free to write your own code.
+	// Start of user code Controller Attributes
+	
+	// Write your own code here. This line can be deleted.
+	
+	// End of user code
+	// END PROTECTED ZONE.
+
+
+	@GetMapping(value = "/health") 
+	public void health() {
+
+		// START PROTECTED ZONE. This space is free to write your own code.
+		// Start of user code Controller method health implementation
+		
+		// Write your own code here. This line can be deleted.
+		
+		// End of user code
+		// END PROTECTED ZONE.
+	}
+
 }

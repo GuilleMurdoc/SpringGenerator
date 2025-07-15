@@ -38,66 +38,45 @@ import [getPackageName(dto.app.basePackage, dto._package)/].[dto.name/];
 public class [controller.name/] {
 [/template]
 
-[template public writeClassAttributes(dto : DTO)]
-[for (attribute : Attribute | dto.attributes)]
-[if (attribute.attributetype.oclIsKindOf(SimpleAttributeType))]
-[if (attribute.attributetype.oclAsType(SimpleAttributeType).nullable)]	@Nullable[/if]
-[/if]
-	private [getAttributeType(attribute)/] [attribute.name/];
-
+[template public writeControllerMethods(controller : Controller)]
+[for (endpoint : Endpoint | controller.endpoints)]
+[writeControllerMethod(endpoint)/]
 [/for]
 [/template]
 
-[template public writeClassConstructor(dto : DTO)]
-	public [dto.name/]DTO(
-[for (attribute : Attribute | dto.attributes)]
-			[getAttributeType(attribute)/] [attribute.name/][if (attribute <> dto.attributes->last())],[/if][if (attribute = dto.attributes->last())]) {[/if]
-[/for]
-[for (attribute : Attribute | dto.attributes)]
-		this.[attribute.name/] = [attribute.name/];
-[/for]
+[template private writeControllerMethod(endpoint : Endpoint)]
+
+	@GetMapping([if (endpoint.pathparts->notEmpty())]value = "[getPathUrl(endpoint.pathparts)/]"[/if]) 
+	public [if (endpoint.outputBody.oclIsUndefined())]void[/if][if (not endpoint.outputBody.oclIsUndefined())][endpoint.outputBody.name/][/if] [endpoint.name/]([if (not hasMethodParameters(endpoint))]) {[/if]
+[if (hasMethodParameters(endpoint))][writeControllerMethodAttributes(endpoint)/]	) {[/if]
+		[createProtectedZone('Controller method ' + endpoint.name + ' implementation')/]
 	}
 [/template]
 
-[query private getAttributeType(attribute : Attribute) : String =
-	if attribute.attributetype.oclIsKindOf(ListAttributeType) then
-		let listType : ListAttributeType = attribute.attributetype.oclAsType(ListAttributeType) in
-			if not listType.type.dto.oclIsUndefined() then
-				'List<' + listType.type.dto.name + '>'
-			else if not listType.type.primitiveType.oclIsUndefined() then
-				'List<' + listType.type.primitiveType + '>'
-			else
-				'List<Object>'
-			endif
-			endif
-	else if attribute.attributetype.oclIsKindOf(SimpleAttributeType) then
-		let simpleType : SimpleAttributeType = attribute.attributetype.oclAsType(SimpleAttributeType) in
-			if not simpleType.type.dto.oclIsUndefined() then
-				simpleType.type.dto.name
-			else if not simpleType.type.primitiveType.oclIsUndefined() then
-				simpleType.type.primitiveType
-			else
-				'Object'
-			endif
-			endif
-	else
-		'Object'
-	endif
-	endif
-/]
-
-[query private needsNullableImport(dto : DTO) : Boolean =
-	dto.attributes->exists(att |
-		att.attributetype.oclIsKindOf(SimpleAttributeType) and
-		att.attributetype.oclAsType(SimpleAttributeType).nullable
-	)
-/]
-
-
-
+[template private writeControllerMethodAttributes(endpoint : Endpoint)]
+[let pathVariables : Set(PathPart) = (endpoint.controller.pathparts->union(endpoint.pathparts)->select(pp : PathPart | not pp.variableType.oclIsUndefined()))]
+[for (pathPart : PathPart | pathVariables)]
+		@PathVariable(name = "[pathPart.value/]") [pathPart.variableType/] [pathPart.value/][if ((not (pathVariables->asOrderedSet()->last() = pathPart)) or not endpoint.inputBody.oclIsUndefined())],[/if]
+[/for]
+[/let]
+[if (not endpoint.inputBody.oclIsUndefined())]
+		@RequestBody [endpoint.inputBody.name/] inputBody
+[/if]
+[/template]
 
 
 [query private getPathUrl(pathParts : OrderedSet(PathPart)) : String =
 	pathParts->iterate(part; acc : String = '' |
     acc + '/' + (if part.variableType.oclIsUndefined() then part.value else '{' + part.value + '}' endif))
+/]
+
+[query public hasMethodParameters(endpoint: Endpoint) : Boolean =
+    let pathVariables : Set(PathPart) = (endpoint.controller.pathparts->union(endpoint.pathparts)) in
+		if pathVariables->select(pp : PathPart | not pp.variableType.oclIsUndefined())->notEmpty() then
+			true
+		else if not endpoint.inputBody.oclIsUndefined() then
+			true
+		else
+			false
+		endif endif
 /]

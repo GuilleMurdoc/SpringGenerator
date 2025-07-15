@@ -19,4 +19,43 @@ import com.company.app.data.expedition.CreationIssueDTO;
 @RequiredArgsConstructor
 public class Issues {
 
+	// Write your own attributes. To be injected, it must be written as final attributes
+	// ex: private final ExampleService exampleService;
+	// START PROTECTED ZONE. This space is free to write your own code.
+	// Start of user code Controller Attributes
+	
+	// Write your own code here. This line can be deleted.
+	
+	// End of user code
+	// END PROTECTED ZONE.
+
+
+	@GetMapping(value = "/{issueId}") 
+	public IssueDTO getIssue(
+		@PathVariable(name = "issueId") Integer issueId,
+		@PathVariable(name = "expeditionId") Integer expeditionId
+	) {
+		// START PROTECTED ZONE. This space is free to write your own code.
+		// Start of user code Controller method getIssue implementation
+		
+		// Write your own code here. This line can be deleted.
+		
+		// End of user code
+		// END PROTECTED ZONE.
+	}
+
+		@GetMapping() 
+		public IssueDTO postIssue(
+			@PathVariable(name = "expeditionId") Integer expeditionId,
+			@RequestBody CreationIssueDTO inputBody
+		) {
+			// START PROTECTED ZONE. This space is free to write your own code.
+			// Start of user code Controller method postIssue implementation
+			
+			// Write your own code here. This line can be deleted.
+			
+			// End of user code
+			// END PROTECTED ZONE.
+		}
+
 }

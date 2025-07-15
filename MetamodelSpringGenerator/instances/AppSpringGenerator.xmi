@@ -446,7 +446,7 @@
       
     <controllers name="Public">
             
-        <endpoints name="healthtrue" method="GET">
+        <endpoints name="health" method="GET">
                   
             <pathparts value="health"/>
                 
@@ -458,9 +458,9 @@
       
     <controllers name="Expedition">
             
-        <endpoints outputBody="//@dtos.5" name="getExpeditionsfalse" method="GET"/>
+        <endpoints outputBody="//@dtos.5" name="getExpeditions" method="GET"/>
             
-        <endpoints outputBody="//@dtos.10" name="getExpeditionfalse" method="GET">
+        <endpoints outputBody="//@dtos.10" name="getExpedition" method="GET">
                   
             <pathparts value="expeditionId" variableType="Integer"/>
                 
@@ -472,9 +472,9 @@
       
     <controllers name="Parcel">
             
-        <endpoints outputBody="//@dtos.6" name="getParcelsfalse" method="GET"/>
+        <endpoints outputBody="//@dtos.6" name="getParcels" method="GET"/>
             
-        <endpoints outputBody="//@dtos.6" name="getParcelfalse" method="GET">
+        <endpoints outputBody="//@dtos.6" name="getParcel" method="GET">
                   
             <pathparts value="expeditionId" variableType="Integer"/>
                 
@@ -490,13 +490,13 @@
       
     <controllers name="Issues">
             
-        <endpoints outputBody="//@dtos.8" name="getIssuefalse" method="GET">
+        <endpoints outputBody="//@dtos.8" name="getIssue" method="GET">
                   
             <pathparts value="issueId" variableType="Integer"/>
                 
         </endpoints>
             
-        <endpoints outputBody="//@dtos.8" inputBody="//@dtos.9" name="postIssuefalse" method="POST"/>
+        <endpoints outputBody="//@dtos.8" inputBody="//@dtos.9" name="postIssue" method="POST"/>
             
         <pathparts value="expeditions"/>
             

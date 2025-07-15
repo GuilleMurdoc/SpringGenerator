@@ -55,7 +55,7 @@ lazy rule operation2endpoint {
 		operation : UML!Operation
 	to 
 		entryEndpoint : SpringMetamodel!Endpoint (
-			name <- operation.name.concat(operation.ownedParameter->isEmpty().toString()),
+			name <- operation.name,
 			pathparts <- operation.getValue(operation.getStereotype('Endpoint'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)), --TODO remove path on Controller and put all together in Endpoint
 			method <- operation.getValue(operation.getStereotype('Endpoint'), 'httpMethod').name,
 			inputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'in')->first() in
