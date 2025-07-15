@@ -32,10 +32,7 @@ import [getPackageName(dto.app.baseDtoPackage, dto._package)/].[dto.name/];
 [template public writeDtoClassHeader(dto : DTO)]
 @Data
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-[comment TODO extension/]
-public class [dto.name/] extends DTO {
+public class [dto.name/] {
 [/template]
 
 [template public writeDtoClassAttributes(dto : DTO)]
