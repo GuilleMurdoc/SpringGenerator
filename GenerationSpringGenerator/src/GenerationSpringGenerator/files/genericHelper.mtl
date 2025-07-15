@@ -13,7 +13,7 @@
 	let basePath : String = basePackageName.replaceAll('\\.', '/'),
 	    specificPath : String = if specificPackageName.oclIsUndefined() or specificPackageName.size() = 0 then '' else '/' + specificPackageName.replaceAll('\\.', '/') endif
 	in
-	appName + '/' + basePath + specificPath + '/' + fileName + '.java'
+	basePath + specificPath + '/' + fileName + '.java'
 /]
 
 
