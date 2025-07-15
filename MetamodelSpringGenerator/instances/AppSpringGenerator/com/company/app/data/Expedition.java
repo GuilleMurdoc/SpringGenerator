@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
 import com.company.app.data.expedition.ExpeditionDTO;
 import com.company.app.data.expedition.ExpeditionBasicDTO;
+import java.util.List;
 
 // Write your own imports
 // START PROTECTED ZONE. This space is free to write your own code.
@@ -31,7 +32,7 @@ public class Expedition {
 
 
 	@GetMapping() 
-	public ExpeditionBasicDTO getExpeditions() {
+	public List<ExpeditionBasicDTO> getExpeditions() {
 
 		// START PROTECTED ZONE. This space is free to write your own code.
 		// Start of user code Controller method getExpeditions implementation

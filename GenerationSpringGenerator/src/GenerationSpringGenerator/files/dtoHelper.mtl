@@ -16,6 +16,9 @@ import lombok.ToString;
 [if (needsNullableImport(dto))]
 import org.springframework.lang.Nullable
 [/if]
+[if (dto.attributes->select(a : Attribute | a.attributetype.oclIsKindOf(ListAttributeType))->notEmpty())]
+import java.util.List;
+[/if]
 [writeDtoAttributesImports(dto)/]
 [/template]
 

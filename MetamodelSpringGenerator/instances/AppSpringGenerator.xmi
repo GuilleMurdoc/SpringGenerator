@@ -458,7 +458,7 @@
       
     <controllers name="Expedition">
             
-        <endpoints outputBody="//@dtos.5" name="getExpeditions" method="GET"/>
+        <endpoints outputBody="//@dtos.5" name="getExpeditions" method="GET" outputIsList="true"/>
             
         <endpoints outputBody="//@dtos.10" name="getExpedition" method="GET">
                   
@@ -472,7 +472,7 @@
       
     <controllers name="Parcel">
             
-        <endpoints outputBody="//@dtos.6" name="getParcels" method="GET"/>
+        <endpoints outputBody="//@dtos.6" name="getParcels" method="GET" outputIsList="true"/>
             
         <endpoints outputBody="//@dtos.6" name="getParcel" method="GET">
                   

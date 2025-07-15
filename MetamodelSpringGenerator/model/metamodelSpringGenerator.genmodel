@@ -64,6 +64,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodelSpringGenerator.ecore#//Endpoint/inputBody"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Endpoint/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Endpoint/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//Endpoint/outputIsList"/>
     </genClasses>
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//PathPart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//PathPart/value"/>

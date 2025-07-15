@@ -2,8 +2,8 @@ package com.company.app.data;
 
 import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
-import com.company.app.data.expedition.IssueDTO;
 import com.company.app.data.expedition.CreationIssueDTO;
+import com.company.app.data.expedition.IssueDTO;
 
 // Write your own imports
 // START PROTECTED ZONE. This space is free to write your own code.
@@ -32,8 +32,8 @@ public class Issues {
 
 	@GetMapping(value = "/{issueId}") 
 	public IssueDTO getIssue(
-		@PathVariable(name = "issueId") Integer issueId,
-		@PathVariable(name = "expeditionId") Integer expeditionId
+		@PathVariable(name = "expeditionId") Integer expeditionId,
+		@PathVariable(name = "issueId") Integer issueId
 	) {
 		// START PROTECTED ZONE. This space is free to write your own code.
 		// Start of user code Controller method getIssue implementation

@@ -3,6 +3,7 @@ package com.company.app.data;
 import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
 import com.company.app.data.expedition.ParcelDTO;
+import java.util.List;
 
 // Write your own imports
 // START PROTECTED ZONE. This space is free to write your own code.
@@ -30,7 +31,7 @@ public class Parcel {
 
 
 	@GetMapping() 
-	public ParcelDTO getParcels(
+	public List<ParcelDTO> getParcels(
 		@PathVariable(name = "expeditionId") Integer expeditionId
 	) {
 		// START PROTECTED ZONE. This space is free to write your own code.

@@ -24,6 +24,9 @@ import lombok.RequiredArgsConstructor;
 [for (dto : DTO | dtos)]
 import [getPackageName(dto.app.basePackage, dto._package)/].[dto.name/];
 [/for][/let]
+[if (controller.endpoints->select(e : Endpoint | e.outputIsList)->notEmpty())]
+import java.util.List;
+[/if]
 [/template]
 
 [template private writeControllerOwnImports(controller : Controller)]
@@ -47,7 +50,7 @@ public class [controller.name/] {
 [template private writeControllerMethod(endpoint : Endpoint)]
 
 	@GetMapping([if (endpoint.pathparts->notEmpty())]value = "[getPathUrl(endpoint.pathparts)/]"[/if]) 
-	public [if (endpoint.outputBody.oclIsUndefined())]void[/if][if (not endpoint.outputBody.oclIsUndefined())][endpoint.outputBody.name/][/if] [endpoint.name/]([if (not hasMethodParameters(endpoint))]) {[/if]
+	public [getReturnType(endpoint)/] [endpoint.name/]([if (not hasMethodParameters(endpoint))]) {[/if]
 [if (hasMethodParameters(endpoint))][writeControllerMethodAttributes(endpoint)/]	) {[/if]
 		[createProtectedZone('Controller method ' + endpoint.name + ' implementation')/]
 	}
@@ -79,4 +82,16 @@ public class [controller.name/] {
 		else
 			false
 		endif endif
+/]
+
+[query public getReturnType(endpoint : Endpoint) : String =
+    if endpoint.outputBody.oclIsUndefined() then
+        'void'
+    else
+        if endpoint.outputIsList then
+            'List<' + endpoint.outputBody.name + '>'
+        else
+            endpoint.outputBody.name
+        endif
+    endif
 /]

@@ -61,7 +61,10 @@ lazy rule operation2endpoint {
 			inputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'in')->first() in
 				if not op.oclIsUndefined() then op.type else OclUndefined endif,
 			outputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'return')->first() in
-				if not op.oclIsUndefined() then op.type else OclUndefined endif
+				if not op.oclIsUndefined() then op.type else OclUndefined endif,
+			outputIsList <- let retParam : UML!Parameter = operation.ownedParameter->select(p | p.direction.toString() = 'return')->first() in
+				if not retParam.oclIsUndefined() then retParam.upper = -1 else false
+     endif
 		)
 }
 
