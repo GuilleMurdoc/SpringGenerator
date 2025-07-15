@@ -18,7 +18,7 @@ public class ErrorDTO extends DTO {
 	private String message;
 
 
-	public ErrorDTODTO(
+	public ErrorDTO(
 			String title,
 			String message) {
 		this.title = title;

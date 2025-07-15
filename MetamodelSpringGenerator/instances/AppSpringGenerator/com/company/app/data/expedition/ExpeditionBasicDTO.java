@@ -35,7 +35,7 @@ public class ExpeditionBasicDTO extends DTO {
 	private Integer id;
 
 
-	public ExpeditionBasicDTODTO(
+	public ExpeditionBasicDTO(
 			String status,
 			AddressesDTO deliveryAddress,
 			CustomerDTO customer,

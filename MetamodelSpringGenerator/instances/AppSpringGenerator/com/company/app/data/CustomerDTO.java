@@ -22,7 +22,7 @@ public class CustomerDTO extends DTO {
 	private List<AddressesDTO> addresses;
 
 
-	public CustomerDTODTO(
+	public CustomerDTO(
 			String dni,
 			String name,
 			List<AddressesDTO> addresses) {

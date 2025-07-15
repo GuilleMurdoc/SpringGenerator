@@ -4,8 +4,7 @@
 [import GenerationSpringGenerator::files::genericHelper /]
 
 [template public writeControllerPackage(controller : Controller)]
-[comment TODO: Change app.basePackage for controllerBasePath /]
-package [getPackageName(controller.app.basePackage, '')/];
+package [getPackageName(controller.app.baseControllerPackage, '')/];
 [/template]
 
 [template public writeControllerImports(controller : Controller)]
@@ -22,7 +21,7 @@ import lombok.RequiredArgsConstructor;
     ->excluding(null)
     ->asSet()]
 [for (dto : DTO | dtos)]
-import [getPackageName(dto.app.basePackage, dto._package)/].[dto.name/];
+import [getPackageName(dto.app.baseDtoPackage, dto._package)/].[dto.name/];
 [/for][/let]
 [if (controller.endpoints->select(e : Endpoint | e.outputIsList)->notEmpty())]
 import java.util.List;

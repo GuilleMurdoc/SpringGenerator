@@ -10,7 +10,8 @@ rule model2app {
 	to 
 		app : SpringMetamodel!App (
 			name <- model.name,
-			basePackage <- thisModule.getBasePackage(model.packagedElement).name,
+			baseDtoPackage <- thisModule.getBasePackage(model.packagedElement, 'DtoPackage').name,
+			baseControllerPackage <- thisModule.getBasePackage(model.packagedElement, 'ControllerPackage').name,
 			dtos <- model.allStereotypedClasses('DTO'),
 			controllers <- model.allStereotypedClasses('Controller')->collect(ctrClass | thisModule.controllerClass2controller(ctrClass))
 		)
@@ -34,7 +35,8 @@ lazy rule controllerClass2controller {
 		controller : SpringMetamodel!Controller (
 			name <- controllerClass.name,
 			pathparts <- controllerClass.getValue(controllerClass.getStereotype('Controller'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)),
-			endpoints <- controllerClass.getAllOperations()->collect(op | thisModule.operation2endpoint(op))
+			endpoints <- controllerClass.getAllOperations()->collect(op | thisModule.operation2endpoint(op)),
+			package <- thisModule.getPackageString(thisModule.reverse(controllerClass.allPackages()->select(p | not p.isBase())))
 		)
 }
 
@@ -178,8 +180,8 @@ helper context UML!Package def: isBase() : Boolean =
     endif
 	endif;
 
-helper def : getBasePackage(elements : Sequence(OclAny)) : UML!Package =
-	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | p.isBase())->first();
+helper def : getBasePackage(elements : Sequence(OclAny), steretypeName : String) : UML!Package =
+	elements->select(e | e.oclIsKindOf(UML!Package))->select(p | not p.getStereotype(steretypeName).oclIsUndefined())->select(p | p.isBase())->first();
 
 helper def : getPackageString(packages : Sequence(UML!Package)) : String =
 	packages->collect(p | p.name)->iterate(p; pString: String = '' |

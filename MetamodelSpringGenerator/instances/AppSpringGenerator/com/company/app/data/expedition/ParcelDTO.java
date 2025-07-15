@@ -33,7 +33,7 @@ public class ParcelDTO extends DTO {
 	private Integer id;
 
 
-	public ParcelDTODTO(
+	public ParcelDTO(
 			String status,
 			Double height,
 			Double width,

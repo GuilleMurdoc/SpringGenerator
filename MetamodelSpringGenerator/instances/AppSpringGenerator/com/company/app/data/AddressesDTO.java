@@ -31,7 +31,7 @@ public class AddressesDTO extends DTO {
 	private String country;
 
 
-	public AddressesDTODTO(
+	public AddressesDTO(
 			String city,
 			String postalCode,
 			String street,

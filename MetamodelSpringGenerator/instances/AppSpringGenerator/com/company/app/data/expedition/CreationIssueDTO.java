@@ -15,7 +15,7 @@ public class CreationIssueDTO extends DTO {
 	private String description;
 
 
-	public CreationIssueDTODTO(
+	public CreationIssueDTO(
 			String description) {
 		this.description = description;
 	}

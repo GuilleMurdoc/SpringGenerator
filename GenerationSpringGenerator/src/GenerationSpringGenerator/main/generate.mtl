@@ -9,7 +9,7 @@
 [comment @main/]
 [for (dto : DTO | app.dtos)]
 [comment TODO: Change app.basePackage for dtoBasePath /]
-[file (getFileFullName(app.name, app.basePackage, dto._package, dto.name), false, 'UTF-8')]
+[file (getFileFullName(app.name, app.baseDtoPackage, dto._package, dto.name), false, 'UTF-8')]
 [writeDtoPackage(dto)/]
 
 [writeDtoImports(dto)/]
@@ -26,8 +26,7 @@
 
 
 [for (controller : Controller | app.controllers)]
-[comment TODO: Change app.basePackage for controllerBasePath /]
-[file (getFileFullName(app.name, app.basePackage, '', controller.name), false, 'UTF-8')]
+[file (getFileFullName(app.name, app.baseControllerPackage, controller._package, controller.name), false, 'UTF-8')]
 [writeControllerPackage(controller)/]
 
 [writeControllerImports(controller)/]

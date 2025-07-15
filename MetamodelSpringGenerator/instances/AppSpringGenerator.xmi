@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><metamodelSpringGenerator:App xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://metamodelSpringGenerator ../model/metamodelSpringGenerator.ecore" xmi:version="2.0" name="AppSpringGenerator" basePackage="com.company.app.data">
+<?xml version="1.0" encoding="UTF-8"?><metamodelSpringGenerator:App xmlns:metamodelSpringGenerator="http://metamodelSpringGenerator" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://metamodelSpringGenerator ../model/metamodelSpringGenerator.ecore" xmi:version="2.0" name="AppSpringGenerator" baseDtoPackage="com.company.app.data" baseControllerPackage="com.company.app.controller">
       
     <dtos name="ErrorDTO" package="">
             
@@ -444,7 +444,7 @@
           
     </dtos>
       
-    <controllers name="Public">
+    <controllers name="Public" package="">
             
         <endpoints name="health" method="GET">
                   
@@ -456,7 +456,7 @@
           
     </controllers>
       
-    <controllers name="Expedition">
+    <controllers name="Expedition" package="expedition">
             
         <endpoints outputBody="//@dtos.5" name="getExpeditions" method="GET" outputIsList="true"/>
             
@@ -470,7 +470,7 @@
           
     </controllers>
       
-    <controllers name="Parcel">
+    <controllers name="Parcel" package="expedition">
             
         <endpoints outputBody="//@dtos.6" name="getParcels" method="GET" outputIsList="true"/>
             
@@ -488,7 +488,7 @@
           
     </controllers>
       
-    <controllers name="Issues">
+    <controllers name="Issues" package="expedition">
             
         <endpoints outputBody="//@dtos.8" name="getIssue" method="GET">
                   

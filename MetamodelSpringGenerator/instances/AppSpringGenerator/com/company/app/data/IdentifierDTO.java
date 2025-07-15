@@ -15,7 +15,7 @@ public class IdentifierDTO extends DTO {
 	private Integer id;
 
 
-	public IdentifierDTODTO(
+	public IdentifierDTO(
 			Integer id) {
 		this.id = id;
 	}

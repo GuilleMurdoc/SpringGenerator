@@ -4,8 +4,7 @@
 [import GenerationSpringGenerator::files::genericHelper /]
 
 [template public writeDtoPackage(dto : DTO)]
-[comment TODO: Change app.basePackage for dtoBasePath /]
-package [getPackageName(dto.app.basePackage, dto._package)/];
+package [getPackageName(dto.app.baseDtoPackage, dto._package)/];
 [/template]
 
 [template public writeDtoImports(dto : DTO)]
@@ -25,7 +24,7 @@ import java.util.List;
 [template private writeDtoAttributesImports(dto : DTO)]
 [for (dtoAttribute : Attribute | dto.attributes->select(att | not att.attributetype.type.dto.oclIsUndefined()) )]
 [let dto : DTO = dtoAttribute.attributetype.type.dto]
-import [getPackageName(dto.app.basePackage, dto._package)/].[dto.name/];
+import [getPackageName(dto.app.baseDtoPackage, dto._package)/].[dto.name/];
 [/let]
 [/for]
 [/template]
@@ -50,7 +49,7 @@ public class [dto.name/] extends DTO {
 [/template]
 
 [template public writeDtoClassConstructor(dto : DTO)]
-	public [dto.name/]DTO(
+	public [dto.name/](
 [for (attribute : Attribute | dto.attributes)]
 			[getAttributeType(attribute)/] [attribute.name/][if (attribute <> dto.attributes->last())],[/if][if (attribute = dto.attributes->last())]) {[/if]
 [/for]

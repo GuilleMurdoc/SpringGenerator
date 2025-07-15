@@ -18,7 +18,7 @@ public class DeliveryDTO extends DTO {
 	private String name;
 
 
-	public DeliveryDTODTO(
+	public DeliveryDTO(
 			String dni,
 			String name) {
 		this.dni = dni;

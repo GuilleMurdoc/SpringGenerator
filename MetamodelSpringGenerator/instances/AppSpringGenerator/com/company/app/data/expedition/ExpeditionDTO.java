@@ -38,7 +38,7 @@ public class ExpeditionDTO extends DTO {
 	private Integer id;
 
 
-	public ExpeditionDTODTO(
+	public ExpeditionDTO(
 			List<IssueDTO> issues,
 			String status,
 			AddressesDTO deliveryAddress,

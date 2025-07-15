@@ -1,9 +1,7 @@
-package com.company.app.data;
+package com.company.app.controller;
 
 import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
-import com.company.app.data.expedition.ParcelDTO;
-import java.util.List;
 
 // Write your own imports
 // START PROTECTED ZONE. This space is free to write your own code.
@@ -15,9 +13,9 @@ import java.util.List;
 // END PROTECTED ZONE.
 
 @RestController
-@RequestMapping(value = "/expeditions/{expeditionId}/parcels")
+@RequestMapping(value = "/public")
 @RequiredArgsConstructor
-public class Parcel {
+public class Public {
 
 	// Write your own attributes. To be injected, it must be written as final attributes
 	// ex: private final ExampleService exampleService;
@@ -30,31 +28,16 @@ public class Parcel {
 	// END PROTECTED ZONE.
 
 
-	@GetMapping() 
-	public List<ParcelDTO> getParcels(
-		@PathVariable(name = "expeditionId") Integer expeditionId
-	) {
+	@GetMapping(value = "/health") 
+	public void health() {
+
 		// START PROTECTED ZONE. This space is free to write your own code.
-		// Start of user code Controller method getParcels implementation
+		// Start of user code Controller method health implementation
 		
 		// Write your own code here. This line can be deleted.
 		
 		// End of user code
 		// END PROTECTED ZONE.
 	}
-
-		@GetMapping(value = "/{expeditionId}") 
-		public ParcelDTO getParcel(
-			@PathVariable(name = "expeditionId") Integer expeditionId,
-			@PathVariable(name = "expeditionId") Integer expeditionId
-		) {
-			// START PROTECTED ZONE. This space is free to write your own code.
-			// Start of user code Controller method getParcel implementation
-			
-			// Write your own code here. This line can be deleted.
-			
-			// End of user code
-			// END PROTECTED ZONE.
-		}
 
 }

@@ -18,7 +18,7 @@ public class IssueDTO extends DTO {
 	private Integer id;
 
 
-	public IssueDTODTO(
+	public IssueDTO(
 			String description,
 			Integer id) {
 		this.description = description;
