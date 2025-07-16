@@ -223,21 +223,21 @@
     </attributes>
   </dtos>
   <controllers name="Public" package="">
-    <endpoints name="health" method="GET">
+    <endpoints name="health" method="Get">
       <pathparts value="health"/>
     </endpoints>
     <pathparts value="public"/>
   </controllers>
   <controllers name="Expedition" package="expedition">
-    <endpoints outputBody="//@dtos.5" name="getExpeditions" method="GET" outputIsList="true"/>
-    <endpoints outputBody="//@dtos.10" name="getExpedition" method="GET">
+    <endpoints outputBody="//@dtos.5" name="getExpeditions" method="Get" outputIsList="true"/>
+    <endpoints outputBody="//@dtos.10" name="getExpedition" method="Get">
       <pathparts value="expeditionId" variableType="Integer"/>
     </endpoints>
     <pathparts value="expeditions"/>
   </controllers>
   <controllers name="Parcel" package="expedition">
-    <endpoints outputBody="//@dtos.6" name="getParcels" method="GET" outputIsList="true"/>
-    <endpoints outputBody="//@dtos.6" name="getParcel" method="GET">
+    <endpoints outputBody="//@dtos.6" name="getParcels" method="Get" outputIsList="true"/>
+    <endpoints outputBody="//@dtos.6" name="getParcel" method="Get">
       <pathparts value="parccelId" variableType="Integer"/>
     </endpoints>
     <pathparts value="expeditions"/>
@@ -245,10 +245,10 @@
     <pathparts value="parcels"/>
   </controllers>
   <controllers name="Issues" package="expedition">
-    <endpoints outputBody="//@dtos.8" name="getIssue" method="GET">
+    <endpoints outputBody="//@dtos.8" name="getIssue" method="Get">
       <pathparts value="issueId" variableType="Integer"/>
     </endpoints>
-    <endpoints outputBody="//@dtos.8" inputBody="//@dtos.9" name="postIssue" method="POST"/>
+    <endpoints outputBody="//@dtos.8" inputBody="//@dtos.9" name="postIssue" method="Post"/>
     <pathparts value="expeditions"/>
     <pathparts value="expeditionId" variableType="Integer"/>
     <pathparts value="issues"/>
