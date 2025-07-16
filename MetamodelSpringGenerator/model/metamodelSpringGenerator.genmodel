@@ -17,11 +17,11 @@
       <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//PrimitiveType/Double"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="metamodelSpringGenerator.ecore#//HttpMethod">
-      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/GET"/>
-      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/POST"/>
-      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/PUT"/>
-      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/DELETE"/>
-      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/PATCH"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/Get"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/Post"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/Put"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/Delete"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodelSpringGenerator.ecore#//HttpMethod/Patch"/>
     </genEnums>
     <genClasses ecoreClass="metamodelSpringGenerator.ecore#//App">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodelSpringGenerator.ecore#//App/name"/>
