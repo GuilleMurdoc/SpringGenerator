@@ -6,7 +6,7 @@
     <semanticResources>../instances/AppSpringGenerator.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_0LkcUDyoEfC0K-o1huMdCQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0OX4sDyoEfC0K-o1huMdCQ" name="metamodelSpringGenerator" repPath="#_0Na2cDyoEfC0K-o1huMdCQ" changeId="1752594486638">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0OX4sDyoEfC0K-o1huMdCQ" name="metamodelSpringGenerator" repPath="#_0Na2cDyoEfC0K-o1huMdCQ" changeId="1752677251300">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="metamodelSpringGenerator.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -831,41 +831,41 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_mdEStFD5EfC-tefkytZDHg" name="GET" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/GET"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/GET"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_mdEStFD5EfC-tefkytZDHg" name="Get" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Get"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Get"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_mdEStVD5EfC-tefkytZDHg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_mdE5sFD5EfC-tefkytZDHg" name="POST" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/POST"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/POST"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_mdE5sFD5EfC-tefkytZDHg" name="Post" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Post"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Post"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_mdE5sVD5EfC-tefkytZDHg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_mdE5slD5EfC-tefkytZDHg" name="PUT" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/PUT"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/PUT"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_mdE5slD5EfC-tefkytZDHg" name="Put" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Put"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Put"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_mdE5s1D5EfC-tefkytZDHg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_xd1RYFD5EfC-tefkytZDHg" name="DELETE" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/DELETE"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/DELETE"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_xd1RYFD5EfC-tefkytZDHg" name="Delete" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Delete"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Delete"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_xd1RYVD5EfC-tefkytZDHg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_0-pFsFD5EfC-tefkytZDHg" name="PATCH" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/PATCH"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/PATCH"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_0-pFsFD5EfC-tefkytZDHg" name="Patch" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Patch"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//HttpMethod/Patch"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_0-pFsVD5EfC-tefkytZDHg" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>

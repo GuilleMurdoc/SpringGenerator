@@ -48,7 +48,7 @@ public class [controller.name/] {
 
 [template private writeControllerMethod(endpoint : Endpoint)]
 
-	@GetMapping([if (endpoint.pathparts->notEmpty())]value = "[getPathUrl(endpoint.pathparts)/]"[/if]) 
+	@[endpoint.method/]Mapping([if (endpoint.pathparts->notEmpty())]value = "[getPathUrl(endpoint.pathparts)/]"[/if]) 
 	public [getReturnType(endpoint)/] [endpoint.name/]([if (not hasMethodParameters(endpoint))]) {[/if]
 [if (hasMethodParameters(endpoint))][writeControllerMethodAttributes(endpoint)/]	) {[/if]
 		[createProtectedZone('Controller method ' + endpoint.name + ' implementation')/]

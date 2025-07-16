@@ -83,10 +83,10 @@
         eOpposite="#//Endpoint/pathparts"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="HttpMethod">
-    <eLiterals name="GET"/>
-    <eLiterals name="POST" value="1"/>
-    <eLiterals name="PUT" value="2"/>
-    <eLiterals name="DELETE" value="3"/>
-    <eLiterals name="PATCH" value="4"/>
+    <eLiterals name="Get"/>
+    <eLiterals name="Post" value="1"/>
+    <eLiterals name="Put" value="2"/>
+    <eLiterals name="Delete" value="3"/>
+    <eLiterals name="Patch" value="4"/>
   </eClassifiers>
 </ecore:EPackage>
