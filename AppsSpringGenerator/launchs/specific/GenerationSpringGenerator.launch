@@ -19,6 +19,6 @@
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="GenerationSpringGenerator.main.Generate"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="GenerationSpringGenerator"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;C:/RepositoriosProgramacion/SpringGenerator/MetamodelSpringGenerator/instances/AppSpringGenerator.xmi&quot; &quot;C:\RepositoriosProgramacion\SpringGenerator\app\src\main\java&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;C:/RepositoriosProgramacion/SpringGenerator/MetamodelSpringGenerator/instances/AppSpringGenerator.xmi&quot; &quot;C:/RepositoriosProgramacion/SpringGenerator/MetamodelSpringGenerator/instances&quot;"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="GenerationSpringGenerator"/>
 </launchConfiguration>
