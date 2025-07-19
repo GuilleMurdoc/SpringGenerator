@@ -22,7 +22,7 @@ import java.util.List;
 [/template]
 
 [template private writeDtoAttributesImports(dto : DTO)]
-[for (dtoAttribute : Attribute | dto.attributes->select(att | not att.attributetype.type.dto.oclIsUndefined()) )]
+[for (dtoAttribute : Attribute | dto.attributes->select(att | not att.attributetype.type.dto.oclIsUndefined())->asSet() )]
 [let dto : DTO = dtoAttribute.attributetype.type.dto]
 import [getPackageName(dto.app.baseDtoPackage, dto._package)/].[dto.name/];
 [/let]
