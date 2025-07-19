@@ -33,6 +33,7 @@
     <eLiterals name="String"/>
     <eLiterals name="Integer" value="1"/>
     <eLiterals name="Double" value="2"/>
+    <eLiterals name="Boolean" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitiveType" eType="#//PrimitiveType"

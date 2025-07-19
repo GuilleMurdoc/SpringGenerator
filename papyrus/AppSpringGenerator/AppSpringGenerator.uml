@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_8GyXoGSCEfCIEYTNxC02UQ/122" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_8GyXoGSCEfCIEYTNxC02UQ/122 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_8GyXoWSCEfCIEYTNxC02UQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProfileSpringGenerator="http:///schemas/ProfileSpringGenerator/_lLEtAGSGEfC08YsBVtUlKw/134" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/ProfileSpringGenerator/_lLEtAGSGEfC08YsBVtUlKw/134 /ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_lLFUEGSGEfC08YsBVtUlKw">
   <uml:Model xmi:id="_rXDMQFDsEfCwvM-0nhwCCw" name="AppSpringGenerator">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_rYTwgFDsEfCwvM-0nhwCCw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -203,15 +203,15 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_mexbgFKpEfCt8vqU6fc2Zw" name="expedition" type="_ixQA4FKpEfCt8vqU6fc2Zw" association="_meaPIFKpEfCt8vqU6fc2Zw"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_rX2dgFDsEfCwvM-0nhwCCw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9NCOAGSCEfCIEYTNxC02UQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NCOAWSCEfCIEYTNxC02UQ" key="Version" value="0.1.41"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NCOAmSCEfCIEYTNxC02UQ" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NCOA2SCEfCIEYTNxC02UQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NCOBGSCEfCIEYTNxC02UQ" key="Date" value="2025-07-19"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NCOBWSCEfCIEYTNxC02UQ" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nIgqEGSGEfC08YsBVtUlKw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nIgqEWSGEfC08YsBVtUlKw" key="Version" value="0.1.53"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nIgqEmSGEfC08YsBVtUlKw" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nIgqE2SGEfC08YsBVtUlKw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nIgqFGSGEfC08YsBVtUlKw" key="Date" value="2025-07-19"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nIgqFWSGEfC08YsBVtUlKw" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rX45wFDsEfCwvM-0nhwCCw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_8GyXoWSCEfCIEYTNxC02UQ"/>
+        <references xmi:type="ecore:EPackage" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_lLFUEGSGEfC08YsBVtUlKw"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="/ProfileSpringGenerator/ProfileSpringGenerator.profile.uml#_fu-NMD7VEfCvDuOhuCRWWA"/>
     </profileApplication>
@@ -228,38 +228,48 @@
   <ProfileSpringGenerator:ControllerPackage xmi:id="_Eg3TMFIHEfC51Ygi3h7npA" base_Package="_9ambIFIGEfC51Ygi3h7npA" base="true"/>
   <ProfileSpringGenerator:ControllerPackage xmi:id="_KT628FIHEfC51Ygi3h7npA" base_Package="_G8sccFIHEfC51Ygi3h7npA"/>
   <ProfileSpringGenerator:Controller xmi:id="_O-a3MFIHEfC51Ygi3h7npA" base_Class="_MIZFQFIHEfC51Ygi3h7npA">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_SFB-oFIOEfCYsOcmorOWSg" name="public" variable="false"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_SFB-oFIOEfCYsOcmorOWSg" name="public"/>
   </ProfileSpringGenerator:Controller>
   <ProfileSpringGenerator:Endpoint xmi:id="_wY0UsFKnEfCt8vqU6fc2Zw" base_Operation="_tq25oFKnEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_xocwkFKnEfCt8vqU6fc2Zw" name="health" variable="false"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_xocwkFKnEfCt8vqU6fc2Zw" name="health"/>
   </ProfileSpringGenerator:Endpoint>
   <ProfileSpringGenerator:DTO xmi:id="_zw3OolKnEfCt8vqU6fc2Zw" base_Class="_zw1ZYFKnEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:Controller xmi:id="_IFwEEFKoEfCt8vqU6fc2Zw" base_Class="_E72T4FKoEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_Kfm3YFKoEfCt8vqU6fc2Zw" name="expeditions" variable="false"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_Kfm3YFKoEfCt8vqU6fc2Zw" name="expeditions"/>
   </ProfileSpringGenerator:Controller>
   <ProfileSpringGenerator:Endpoint xmi:id="_MLXOkFKoEfCt8vqU6fc2Zw" base_Operation="_Lmj4YFKoEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:Endpoint xmi:id="_j_MQIFKoEfCt8vqU6fc2Zw" base_Operation="_ifc7sFKoEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_lv_fYFKoEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_lv_fYFKoEfCt8vqU6fc2Zw" name="expeditionId">
+      <variableType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </path>
   </ProfileSpringGenerator:Endpoint>
   <ProfileSpringGenerator:Controller xmi:id="_t0N0gFKoEfCt8vqU6fc2Zw" base_Class="_t0LYQFKoEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_t0N0gVKoEfCt8vqU6fc2Zw" name="expeditions" variable="false"/>
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_zg64oFKoEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_1z_ugFKoEfCt8vqU6fc2Zw" name="parcels" variable="false"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_t0N0gVKoEfCt8vqU6fc2Zw" name="expeditions"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_zg64oFKoEfCt8vqU6fc2Zw" name="expeditionId">
+      <variableType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </path>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_1z_ugFKoEfCt8vqU6fc2Zw" name="parcels"/>
   </ProfileSpringGenerator:Controller>
   <ProfileSpringGenerator:Endpoint xmi:id="_3mzI4FKoEfCt8vqU6fc2Zw" base_Operation="_3mx6wFKoEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:Endpoint xmi:id="_71cTklKoEfCt8vqU6fc2Zw" base_Operation="_71aeYFKoEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_71c6oFKoEfCt8vqU6fc2Zw" name="parccelId" variableType="Integer"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_71c6oFKoEfCt8vqU6fc2Zw" name="parccelId">
+      <variableType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </path>
   </ProfileSpringGenerator:Endpoint>
   <ProfileSpringGenerator:Controller xmi:id="_JlOdVVKpEfCt8vqU6fc2Zw" base_Class="_JlMBEFKpEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYFKpEfCt8vqU6fc2Zw" name="expeditions" variable="false"/>
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYVKpEfCt8vqU6fc2Zw" name="expeditionId" variableType="Integer"/>
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYlKpEfCt8vqU6fc2Zw" name="issues" variable="false"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYFKpEfCt8vqU6fc2Zw" name="expeditions"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYVKpEfCt8vqU6fc2Zw" name="expeditionId">
+      <variableType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </path>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_JlPEYlKpEfCt8vqU6fc2Zw" name="issues"/>
   </ProfileSpringGenerator:Controller>
   <ProfileSpringGenerator:DTO xmi:id="_UL46AFKpEfCt8vqU6fc2Zw" base_Class="_Rq2goFKpEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:DTO xmi:id="_pbNXcFKpEfCt8vqU6fc2Zw" base_Class="_ixQA4FKpEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:DTO xmi:id="_VnI6kFKqEfCt8vqU6fc2Zw" base_Class="_dn2eIFKpEfCt8vqU6fc2Zw"/>
   <ProfileSpringGenerator:Endpoint xmi:id="_a7md0lKqEfCt8vqU6fc2Zw" base_Operation="_a7lPsFKqEfCt8vqU6fc2Zw">
-    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_a7nE4FKqEfCt8vqU6fc2Zw" name="issueId" variableType="Integer"/>
+    <path xmi:type="ProfileSpringGenerator:PathPart" xmi:id="_a7nE4FKqEfCt8vqU6fc2Zw" name="issueId">
+      <variableType xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </path>
   </ProfileSpringGenerator:Endpoint>
   <ProfileSpringGenerator:Endpoint xmi:id="_oHNjgFKqEfCt8vqU6fc2Zw" base_Operation="_oHLuUFKqEfCt8vqU6fc2Zw" httpMethod="Post"/>
 </xmi:XMI>
