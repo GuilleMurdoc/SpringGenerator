@@ -76,7 +76,7 @@ lazy rule pathPartMap2pathPart {
 	to 
 		pathPart : SpringMetamodel!PathPart (
 			value <- pathPartMap.name,
-			variableType <- if pathPartMap.variable then pathPartMap.variableType.name else OclUndefined endif
+			variableType <- if (not pathPartMap.variableType.oclIsUndefined()) then pathPartMap.variableType.name else OclUndefined endif
 		)
 }
 
@@ -124,9 +124,12 @@ helper def : umlTypeToPrimitiveType(umlType : String) : String =
 	if type.indexOf('int') > -1  or type.indexOf('long') > -1
 		then 'Integer'
 	else
-	if type.indexOf('double') > -1 or type.indexOf('float') > -1
+	if type.indexOf('double') > -1 or type.indexOf('float') > -1 or type.indexOf('real') > -1
 		then 'Double'
-	else 'String' endif endif;
+	else
+	if type.indexOf('bool') > -1
+		then 'Boolean'
+	else 'String' endif endif endif;
 
 
 -- allPackages --

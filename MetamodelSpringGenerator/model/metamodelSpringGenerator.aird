@@ -6,7 +6,7 @@
     <semanticResources>../instances/AppSpringGenerator.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_0LkcUDyoEfC0K-o1huMdCQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0OX4sDyoEfC0K-o1huMdCQ" name="metamodelSpringGenerator" repPath="#_0Na2cDyoEfC0K-o1huMdCQ" changeId="1752677251300">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0OX4sDyoEfC0K-o1huMdCQ" name="metamodelSpringGenerator" repPath="#_0Na2cDyoEfC0K-o1huMdCQ" changeId="1752919148881">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="metamodelSpringGenerator.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -80,6 +80,10 @@
             <children xmi:type="notation:Node" xmi:id="_DHrSwExhEfCQ7sC-vN6iyw" type="3010" element="_DHoPcExhEfCQ7sC-vN6iyw">
               <styles xmi:type="notation:FontStyle" xmi:id="_DHrSwUxhEfCQ7sC-vN6iyw" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_DHrSwkxhEfCQ7sC-vN6iyw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AbWAQGSHEfCb4bfq2J8Xrw" type="3010" element="_AbFhkGSHEfCb4bfq2J8Xrw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_AbWAQWSHEfCb4bfq2J8Xrw" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_AbWAQmSHEfCb4bfq2J8Xrw"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_AGG_MkxhEfCQ7sC-vN6iyw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_AGG_M0xhEfCQ7sC-vN6iyw"/>
@@ -574,6 +578,14 @@
         <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//PrimitiveType/Double"/>
         <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//PrimitiveType/Double"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_DHoPcUxhEfCQ7sC-vN6iyw" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_AbFhkGSHEfCb4bfq2J8Xrw" name="Boolean" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//PrimitiveType/Boolean"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="metamodelSpringGenerator.ecore#//PrimitiveType/Boolean"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_AbFhkWSHEfCb4bfq2J8Xrw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
