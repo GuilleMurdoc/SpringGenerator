@@ -32695,89 +32695,6 @@
       </eClassifiers>
     </contents>
   </eAnnotations>
-  <ownedRule xmi:type="uml:Constraint" xmi:id="_lqw0kFBMEfCD3-ep8Y7tBg" name="Loop_is_not_allow">
-    <specification xmi:type="uml:OpaqueExpression" xmi:id="_lq3iQFBMEfCD3-ep8Y7tBg" name="constraintSpec">
-      <language>OCL</language>
-      <body>let level1 : Set(UML::Class) = self.base_Class.getAllAttributes()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-in&#xD;
-let level2 : Set(UML::Class) = level1&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level1)&#xD;
-in&#xD;
-let level3 : Set(UML::Class) = level2&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level2)&#xD;
-in&#xD;
-let level4 : Set(UML::Class) = level3&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level3)&#xD;
-in&#xD;
-let level5 : Set(UML::Class) = level4&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level4)&#xD;
-in&#xD;
-let level6 : Set(UML::Class) = level5&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level5)&#xD;
-in&#xD;
-let level7 : Set(UML::Class) = level6&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level6)&#xD;
-in&#xD;
-let level8 : Set(UML::Class) = level7&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level7)&#xD;
-in&#xD;
-let level9 : Set(UML::Class) = level8&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level8)&#xD;
-in&#xD;
-let level10 : Set(UML::Class) = level9&#xD;
-  ->collect(c | c.getAllAttributes())&#xD;
-  ->flatten()&#xD;
-  ->select(p | not p.association.oclIsUndefined())&#xD;
-  ->collect(p | p.type.oclAsType(UML::Class))&#xD;
-  ->asSet()&#xD;
-  ->union(level9)&#xD;
-in&#xD;
-  not level10->exists(p | p = self.base_Class)</body>
-    </specification>
-  </ownedRule>
   <elementImport xmi:type="uml:ElementImport" xmi:id="_WwINcD7WEfCE1Jn6loJQ0A" alias="Class">
     <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
   </elementImport>
@@ -32800,48 +32717,12 @@ in&#xD;
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
   </packageImport>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_ExmyYD7WEfCE1Jn6loJQ0A" name="DTO">
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_79eqcESgEfC_mOAYedgu4w" name="Test_constraint">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_79htwESgEfC_mOAYedgu4w" name="constraintSpec">
-        <language>OCL</language>
-        <body>true</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_C1Sk4ESjEfC_mOAYedgu4w" name="DTO_should_be_in_DtoPackage">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_C1TL8ESjEfC_mOAYedgu4w" name="constraintSpec">
-        <language>OCL</language>
-        <body>not self.base_Class.package.getAppliedStereotype('ProfileSpringGenerator::DtoPackage').oclIsUndefined()</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_gErC8FIGEfC51Ygi3h7npA" name="DTO_can_not_have_operations">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_gErqAFIGEfC51Ygi3h7npA" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Class.getOperations()->isEmpty()</body>
-      </specification>
-    </ownedRule>
     <generalization xmi:type="uml:Generalization" xmi:id="_Gpc3gFHfEfCIeMQ-CZn6-g" general="_DiwMUFHfEfCIeMQ-CZn6-g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_Kaj0gESgEfC5tfYgJaBXsQ" name="DtoPackage">
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_Oy_tYFEiEfCKpvaZw5oLqg" name="DtoPackage_should_be_in_other_DtoPackage">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_OzAUcFEiEfCKpvaZw5oLqg" name="constraintSpec">
-        <language>OCL</language>
-        <body>(not self.base) implies (not self.base_Package.nestingPackage.getAppliedStereotype('ProfileSpringGenerator::DtoPackage').oclIsUndefined())</body>
-      </specification>
-    </ownedRule>
     <generalization xmi:type="uml:Generalization" xmi:id="_DDmyMFHfEfCIeMQ-CZn6-g" general="__7aSMFHeEfCIeMQ-CZn6-g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="__7aSMFHeEfCIeMQ-CZn6-g" name="AppPackage" isAbstract="true">
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_MZL9gE-aEfCuudK7uqH2xg" name="All_elements_should_apply_stereotype">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_MZSEIE-aEfCuudK7uqH2xg" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Package.packagedElement->forAll(el | (not el.getAppliedStereotypes()->oclIsUndefined()) and el.getAppliedStereotypes()->notEmpty())</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_mDZskEYQEfC-pK17sPfG3w" name="Base_Package_should_be_the_most_base_package">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_mDa6sEYQEfC-pK17sPfG3w" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base implies self.base_Package.nestingPackage.getAppliedStereotypes()->isEmpty()</body>
-      </specification>
-    </ownedRule>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_CRKBkFHfEfCIeMQ-CZn6-g" name="base_Package" association="_CRIMYFHfEfCIeMQ-CZn6-g">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CRKBkVHfEfCIeMQ-CZn6-g"/>
@@ -32864,33 +32745,9 @@ in&#xD;
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_GIAXUVHfEfCIeMQ-CZn6-g" name="extension_AppClass" type="_DiwMUFHfEfCIeMQ-CZn6-g" aggregation="composite" association="_GIAXUFHfEfCIeMQ-CZn6-g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_isAIAFH6EfCXlpeBOZ_THQ" name="ControllerPackage">
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_XXM9gFH7EfCXlpeBOZ_THQ" name="ControllerPackage_should_be_in_other_ControllerPackage">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_XXM9gVH7EfCXlpeBOZ_THQ" name="constraintSpec">
-        <language>OCL</language>
-        <body>(not self.base) implies (not self.base_Package.nestingPackage.getAppliedStereotype('ProfileSpringGenerator::ControllerPackage').oclIsUndefined())</body>
-      </specification>
-    </ownedRule>
     <generalization xmi:type="uml:Generalization" xmi:id="_lDrKAFH6EfCXlpeBOZ_THQ" general="__7aSMFHeEfCIeMQ-CZn6-g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_vLDBoFIFEfCXlpeBOZ_THQ" name="Controller">
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_3AJVoFIFEfCXlpeBOZ_THQ" name="Controller_should_be_in_ControllerPackage">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_3AJVoVIFEfCXlpeBOZ_THQ" name="constraintSpec">
-        <language>OCL</language>
-        <body>not self.base_Class.package.getAppliedStereotype('ProfileSpringGenerator::ControllerPackage').oclIsUndefined()</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_qaBtMFIGEfC51Ygi3h7npA" name="Controller_can_not_have_attributes">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_qaBtMVIGEfC51Ygi3h7npA" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Class.getAllAttributes()->isEmpty()</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_OhGsQFILEfCtfdnuHN1rWQ" name="Controller_can_only_have_endpoints">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_OhGsQVILEfCtfdnuHN1rWQ" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Class.getOperations()->forAll(op | not op.getAppliedStereotype('ProfileSpringGenerator::Endpoint').oclIsUndefined())</body>
-      </specification>
-    </ownedRule>
     <generalization xmi:type="uml:Generalization" xmi:id="_2bzScFIFEfCXlpeBOZ_THQ" general="_DiwMUFHfEfCIeMQ-CZn6-g"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_I_6NMFIOEfCYsOcmorOWSg" name="path" type="_Yy4BkFIMEfCYsOcmorOWSg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KHAYIFIOEfCYsOcmorOWSg"/>
@@ -32898,42 +32755,6 @@ in&#xD;
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_b1K_0FIKEfCtfdnuHN1rWQ" name="Endpoint">
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_tu3v0FILEfCtfdnuHN1rWQ" name="Endpoint_should_be_in_Controller">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_tu3v0VILEfCtfdnuHN1rWQ" name="constraintSpec">
-        <language>OCL</language>
-        <body>not self.base_Operation.class.getAppliedStereotype('ProfileSpringGenerator::Controller').oclIsUndefined()</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_2NVQQFITEfCYsOcmorOWSg" name="Parameters_could_not_be_out_or_inout">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_2NWeYFITEfCYsOcmorOWSg" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Operation.ownedParameter->forAll(p | p.direction &lt;> ParameterDirectionKind::out and p.direction &lt;> ParameterDirectionKind::inout)</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_kv_aMFIUEfCYsOcmorOWSg" name="Only_one_parameter_could_be_in">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_kwABQFIUEfCYsOcmorOWSg" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Operation.ownedParameter->select(p | p.direction &lt;> ParameterDirectionKind::return)->size() &lt;= 1</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_1618oFIUEfCYsOcmorOWSg" name="Only_one_parameter_could_be_return">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_1618oVIUEfCYsOcmorOWSg" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Operation.ownedParameter->select(p | p.direction = ParameterDirectionKind::return)->size() &lt;= 1</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_Kf2EwFKkEfCVkN1dUdQqKA" name="All_parameter_should_be_a_DTO">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_Kf2EwVKkEfCVkN1dUdQqKA" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.base_Operation.ownedParameter->forAll(p | p.type.oclIsKindOf(Class) and not p.type.oclAsType(Class).getAppliedStereotype('ProfileSpringGenerator::DTO').oclIsUndefined())</body>
-      </specification>
-    </ownedRule>
-    <ownedRule xmi:type="uml:Constraint" xmi:id="_fnuFcGJSEfCJj7OHsK0wvQ" name="Get_endpoints_can_not_have_body">
-      <specification xmi:type="uml:OpaqueExpression" xmi:id="_fnuFcWJSEfCJj7OHsK0wvQ" name="constraintSpec">
-        <language>OCL</language>
-        <body>self.httpMethod = HttpMethod::Get implies self.base_Operation.ownedParameter->select(p | p.direction &lt;> ParameterDirectionKind::return)->size() = 0</body>
-      </specification>
-    </ownedRule>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_hRllMVIKEfCtfdnuHN1rWQ" name="base_Operation" association="_hRkXEFIKEfCtfdnuHN1rWQ">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Operation"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hRllMlIKEfCtfdnuHN1rWQ"/>
@@ -32963,4 +32784,8 @@ in&#xD;
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y5RCsGSDEfCFVMFsnfqtaw"/>
     </ownedAttribute>
   </packagedElement>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_kv_aMFIUEfCYsOcmorOWSg" name="Only_one_parameter_could_be_in"/>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_2NVQQFITEfCYsOcmorOWSg" name="Parameters_could_not_be_out_or_inout"/>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_tu3v0FILEfCtfdnuHN1rWQ" name="Endpoint_should_be_in_Controller"/>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_3AJVoFIFEfCXlpeBOZ_THQ" name="Controller_should_be_in_ControllerPackage"/>
 </uml:Profile>
