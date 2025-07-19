@@ -13,7 +13,7 @@ rule model2app {
 			baseDtoPackage <- thisModule.getBasePackage(model.packagedElement, 'DtoPackage').name,
 			baseControllerPackage <- thisModule.getBasePackage(model.packagedElement, 'ControllerPackage').name,
 			dtos <- model.allStereotypedClasses('DTO'),
-			controllers <- model.allStereotypedClasses('Controller')->collect(ctrClass | thisModule.controllerClass2controller(ctrClass))
+			controllers <- model.allStereotypedClasses('Controller')
 		)
 }
 
@@ -23,12 +23,12 @@ rule dtoClass2dto {
 	to 
 		dto : SpringMetamodel!DTO (
 			name <- dtoClass.name.concat('DTO'),
-			attributes <- dtoClass.getAllAttributes()->collect(attr | thisModule.property2attribute(attr)),
+	attributes <- dtoClass.getAllAttributes()->collect(attr | thisModule.property2attribute(attr)),
 			package <- thisModule.getPackageString(thisModule.reverse(dtoClass.allPackages()->select(p | not p.isBase())))
 		)
 }
 
-lazy rule controllerClass2controller {
+rule controllerClass2controller {
 	from
 		controllerClass : UML!Class (not controllerClass.getStereotype('Controller').oclIsUndefined())
 	to 
@@ -58,7 +58,7 @@ lazy rule operation2endpoint {
 	to 
 		entryEndpoint : SpringMetamodel!Endpoint (
 			name <- operation.name,
-			pathparts <- operation.getValue(operation.getStereotype('Endpoint'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)), --TODO remove path on Controller and put all together in Endpoint
+			pathparts <- operation.getValue(operation.getStereotype('Endpoint'), 'path')->collect(pp | thisModule.pathPartMap2pathPart(pp)),
 			method <- operation.getValue(operation.getStereotype('Endpoint'), 'httpMethod').name,
 			inputBody <- let op : UML!Operation = operation.ownedParameter->select(p | p.direction.toString() = 'in')->first() in
 				if not op.oclIsUndefined() then op.type else OclUndefined endif,
